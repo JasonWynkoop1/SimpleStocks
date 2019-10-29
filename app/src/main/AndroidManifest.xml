@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity"></activity>
         <activity
             android:name="com.cs360.simplestocks.activities.LoginActivity"
             android:screenOrientation="portrait">
@@ -32,6 +31,16 @@
         <activity
             android:name="com.cs360.simplestocks.activities.UsersListActivity"
             android:screenOrientation="portrait" />
+
+        <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ContactUseActivity" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="message/rfc822"/>
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
