@@ -112,16 +112,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      * This method is to validate the input text fields and post data to SQLite
      */
     private void writeDataToDatabase() {
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextName, mTextInputLayout, getString(R.string.error_message_name))) {
+        if (!inputValidation.checkForUserInput(textInputEditTextName, mTextInputLayout, getString(R.string.error_message_name))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForUserInput(textInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
         if (!inputValidation.checkForValidEmail(textInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, mTextInputLayoutPassword, getString(R.string.error_message_password))) {
+        if (!inputValidation.checkForUserInput(textInputEditTextPassword, mTextInputLayoutPassword, getString(R.string.error_message_password))) {
             return;
         }
         if (!inputValidation.isInputEditTextMatches(textInputEditTextPassword, textInputEditTextConfirmPassword,

@@ -16,11 +16,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/title_login_screen_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp" />
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/simple_stocks"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorSimpleStocksTitle"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/login_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Login"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorSimpleStocksTitle"
+            android:textSize="30sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TEXT_INPUT_LAYOUT_EMAIL"
@@ -36,6 +52,7 @@
                 android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@android:color/white" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -63,12 +80,22 @@
             android:text="@string/text_login" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewLinkRegister"
+            android:id="@+id/TEXT_VIEW_LINK_REGISTER"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="@string/text_not_member"
             android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/TEXT_VIEW_LINK_CONTACT_US"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Contact Us"
+            android:textSize="16sp" />
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

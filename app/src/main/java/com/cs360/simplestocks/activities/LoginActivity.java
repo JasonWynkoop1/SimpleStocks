@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     private AppCompatButton appCompatButtonLogin;
 
     private AppCompatTextView textViewLinkRegister;
+    private AppCompatTextView textViewLinkContactUs;
 
     private InputValidation inputValidation;
     private SQLiteDatabaseHelper mSQLiteDatabaseHelper;
@@ -129,10 +130,13 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             case R.id.appCompatButtonLogin:
                 verifyInput();
                 break;
-            case R.id.textViewLinkRegister:
+            case R.id.TEXT_VIEW_LINK_REGISTER:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intentRegister);
                 break;
+            case R.id.TEXT_VIEW_LINK_CONTACT_US:
+                Intent intentContactUs = new Intent(getApplicationContext(), ContactUsActivity.class);
+                startActivity(intentContactUs);
         }
 
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
@@ -150,7 +154,8 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         mTextInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
         mTextInputEditPassword = findViewById(R.id.textInputEditTextPassword);
         appCompatButtonLogin = findViewById(R.id.appCompatButtonLogin);
-        textViewLinkRegister = findViewById(R.id.textViewLinkRegister);
+        textViewLinkRegister = findViewById(R.id.TEXT_VIEW_LINK_REGISTER);
+        textViewLinkContactUs = findViewById(R.id.TEXT_VIEW_LINK_CONTACT_US);
     }
 
     /**
@@ -159,6 +164,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     private void initializeListeners(){
         appCompatButtonLogin.setOnClickListener(this);
         textViewLinkRegister.setOnClickListener(this);
+        textViewLinkContactUs.setOnClickListener(this);
     }
 
     /**
@@ -176,24 +182,26 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      *
      */
     private void verifyInput(){
-        if (!inputValidation.isInputEditTextFilled(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForUserInput(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
         if (!inputValidation.checkForValidEmail(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(mTextInputEditPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForUserInput(mTextInputEditPassword, textInputLayoutPassword, getString(R.string.error_message_password))) {
             return;
         }
 
         if (mSQLiteDatabaseHelper.checkIfUserExists(mTextInputEditTextEmail.getText().toString().trim()
                 , mTextInputEditPassword.getText().toString().trim())) {
-
-
-            Intent accountsIntent = new Intent(activity, UsersListActivity.class);
-            accountsIntent.putExtra("EMAIL", mTextInputEditTextEmail.getText().toString().trim());
-            emptyInputEditText();
-            startActivity(accountsIntent);
+            if(mTextInputEditTextEmail.getText().toString().trim().equals("admin@test.com")) {
+                Intent accountsIntent = new Intent(activity, UsersListActivity.class);
+                accountsIntent.putExtra("EMAIL", mTextInputEditTextEmail.getText().toString().trim());
+                emptyInputEditText();
+                startActivity(accountsIntent);
+            }else{
+                System.out.println("START HOMEPAGE");
+            }
 
 
         } else {

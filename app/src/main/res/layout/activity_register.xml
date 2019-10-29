@@ -16,6 +16,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/title_login_screen_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/simple_stocks"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorSimpleStocksTitle"
+            android:textSize="70dp" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

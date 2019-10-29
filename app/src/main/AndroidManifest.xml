@@ -2,31 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.androidtutorialshub.loginregister">
-
-    <!--Declaring the required permissions-->
+    <!-- Declaring the required permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:fullBackupContent="@xml/backup_descriptor">
-
-
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity"></activity>
         <activity
             android:name="com.cs360.simplestocks.activities.LoginActivity"
             android:screenOrientation="portrait">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +32,10 @@
         <activity
             android:name="com.cs360.simplestocks.activities.UsersListActivity"
             android:screenOrientation="portrait" />
-    </application>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 
 </manifest>
