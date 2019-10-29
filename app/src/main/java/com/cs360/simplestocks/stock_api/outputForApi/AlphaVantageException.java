@@ -1,0 +1,11 @@
+package com.cs360.simplestocks.stock_api.outputForApi;
+
+public class AlphaVantageException extends RuntimeException {
+    public AlphaVantageException(String message, Exception e) {
+        super(message, e);
+    }
+
+    public AlphaVantageException(String message) {
+        super(message);
+    }
+}
