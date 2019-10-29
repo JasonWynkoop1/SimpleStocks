@@ -21,6 +21,14 @@ public class InputValidation {
         this.context = context;
     }
 
+    /**
+     * Checking to see if there is an input in the
+     * email text edit field
+     * @param textInputEditText
+     * @param textInputLayout
+     * @param message
+     * @return
+     */
     public boolean isInputEditTextFilled(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message){
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty()){
@@ -34,6 +42,14 @@ public class InputValidation {
         return true;
     }
 
+    /**
+     *
+     * @param textInputEditText1
+     * @param textInputEditText2
+     * @param textInputLayout
+     * @param message
+     * @return
+     */
     public boolean isInputEditTextMatches(TextInputEditText textInputEditText1, TextInputEditText textInputEditText2, TextInputLayout textInputLayout, String message) {
         String value1 = textInputEditText1.getText().toString().trim();
         String value2 = textInputEditText2.getText().toString().trim();
@@ -48,14 +64,14 @@ public class InputValidation {
     }
 
     /**
-     * method to check InputEditText has valid email .
+     * checking for valid email in text field (email)
      *
      * @param textInputEditText
      * @param textInputLayout
      * @param message
      * @return
      */
-    public boolean isInputEditTextEmail(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message) {
+    public boolean checkForValidEmail(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message) {
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
             textInputLayout.setError(message);
