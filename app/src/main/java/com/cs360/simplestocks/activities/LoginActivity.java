@@ -30,11 +30,11 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     private NestedScrollView nestedScrollView;
 
-    private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout mTextInputLayoutEmail;
     private TextInputLayout textInputLayoutPassword;
 
-    private TextInputEditText textInputEditTextEmail;
-    private TextInputEditText textInputEditTextPassword;
+    private TextInputEditText mTextInputEditTextEmail;
+    private TextInputEditText mTextInputEditPassword;
 
     private AppCompatButton appCompatButtonLogin;
 
@@ -131,10 +131,10 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      */
     private void initializeViews(){
         nestedScrollView = findViewById(R.id.NESTED_SCROLL_VIEW);
-        textInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
+        mTextInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
         textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
-        textInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
-        textInputEditTextPassword = findViewById(R.id.textInputEditTextPassword);
+        mTextInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
+        mTextInputEditPassword = findViewById(R.id.textInputEditTextPassword);
         appCompatButtonLogin = findViewById(R.id.appCompatButtonLogin);
         textViewLinkRegister = findViewById(R.id.textViewLinkRegister);
     }
@@ -159,22 +159,22 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     }
 
     private void verifyInput(){
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.isInputEditTextFilled(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextEmail(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForValidEmail(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
+        if (!inputValidation.isInputEditTextFilled(mTextInputEditPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
             return;
         }
 
-        if (mSQLiteDatabaseHelper.checkIfUserExists(textInputEditTextEmail.getText().toString().trim()
-                ,textInputEditTextPassword.getText().toString().trim())) {
+        if (mSQLiteDatabaseHelper.checkIfUserExists(mTextInputEditTextEmail.getText().toString().trim()
+                , mTextInputEditPassword.getText().toString().trim())) {
 
 
             Intent accountsIntent = new Intent(activity, UsersListActivity.class);
-            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
+            accountsIntent.putExtra("EMAIL", mTextInputEditTextEmail.getText().toString().trim());
             emptyInputEditText();
             startActivity(accountsIntent);
 
@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      * email and password fields
      */
     private void emptyInputEditText(){
-        textInputEditTextEmail.setText(null);
-        textInputEditTextPassword.setText(null);
+        mTextInputEditTextEmail.setText(null);
+        mTextInputEditPassword.setText(null);
     }
 }
