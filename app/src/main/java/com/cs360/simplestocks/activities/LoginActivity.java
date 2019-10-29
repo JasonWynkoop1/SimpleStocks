@@ -45,7 +45,10 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     private static final int STORAGE_PERMISSION_CODE = 101;
 
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -57,7 +60,14 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         initializeObjects();
     }
 
-    // Function to check and request permission.
+
+
+    /**
+     * Function to check and request permission.
+     *
+     * @param permission
+     * @param requestCode
+     */
     public void checkPermission(String permission, int requestCode)
     {
         if (ContextCompat.checkSelfPermission(LoginActivity.this, permission)
@@ -77,10 +87,14 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     }
 
-    // This function is called when the user accepts or decline the permission.
-    // Request Code is used to check which permission called this function.
-    // This request code is provided when the user is prompt for permission.
-
+    /**
+     * This function is called when the user accepts or decline the permission.
+     * Request Code is used to check which permission called this function.
+     * This request code is provided when the user is prompt for permission.
+     * @param requestCode - what permission
+     * @param permissions - permission to check against
+     * @param grantResults - grant results code
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
     {
@@ -158,6 +172,9 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         inputValidation = new InputValidation(activity);
     }
 
+    /**
+     *
+     */
     private void verifyInput(){
         if (!inputValidation.isInputEditTextFilled(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
