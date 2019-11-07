@@ -5,13 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.androidtutorialshub.loginregister.R;
+import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.model.User;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,10 +47,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         initializeViews();
-        intializeListeners();
+        initializeListeners();
         initializeObjects();
     }
 
@@ -92,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /**
      * This method is to initialize listeners
      */
-    private void intializeListeners() {
+    private void initializeListeners() {
         appCompatButtonRegister.setOnClickListener(this);
         appCompatTextViewLoginLink.setOnClickListener(this);
 
@@ -124,16 +126,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (!inputValidation.checkForUserInput(textInputEditTextPassword, mTextInputLayoutPassword, getString(R.string.error_message_password))) {
             return;
         }
-        if (!inputValidation.isInputEditTextMatches(textInputEditTextPassword, textInputEditTextConfirmPassword,
+        if (!inputValidation.doPasswordsMatch(textInputEditTextPassword, textInputEditTextConfirmPassword,
                 mTextInputLayoutConfirmPassword, getString(R.string.error_password_match))) {
             return;
         }
 
-        if (!mSQLiteDatabaseHelper.checkIfUserExists(textInputEditTextEmail.getText().toString().trim())) {
+        if (!mSQLiteDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
 
-            user.setName(textInputEditTextName.getText().toString().trim());
+            user.setName(Objects.requireNonNull(textInputEditTextName.getText()).toString().trim());
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
-            user.setPassword(textInputEditTextPassword.getText().toString().trim());
+            user.setPassword(Objects.requireNonNull(textInputEditTextPassword.getText()).toString().trim());
 
             mSQLiteDatabaseHelper.addUser(user);
 

@@ -15,7 +15,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
-import com.androidtutorialshub.loginregister.R;
+import com.cs360.simplestocks.utilities.GetStockData;
+import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
@@ -59,6 +60,10 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         initializeViews();
         initializeListeners();
         initializeObjects();
+
+        GetStockData getStockData = new GetStockData();
+        getStockData.execute();
+
     }
 
 
@@ -66,8 +71,8 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     /**
      * Function to check and request permission.
      *
-     * @param permission
-     * @param requestCode
+     * @param permission - permission
+     * @param requestCode - code being requested
      */
     public void checkPermission(String permission, int requestCode)
     {
@@ -122,7 +127,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     /**
      * Implemented method to listen for the click on view
-     * @param v
+     * @param v - current view
      */
     @Override
     public void onClick(View v) {
@@ -138,9 +143,6 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
                 Intent intentContactUs = new Intent(getApplicationContext(), ContactUsActivity.class);
                 startActivity(intentContactUs);
         }
-
-        checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
 
     }
 
@@ -192,13 +194,10 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             return;
         }
 
-        if (mSQLiteDatabaseHelper.checkIfUserExists(mTextInputEditTextEmail.getText().toString().trim()
-                , mTextInputEditPassword.getText().toString().trim())) {
+        if (mSQLiteDatabaseHelper.checkIfUserExists(Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim()
+                , Objects.requireNonNull(mTextInputEditPassword.getText()).toString().trim())) {
             if(mTextInputEditTextEmail.getText().toString().trim().equals("admin@test.com")) {
-                Intent accountsIntent = new Intent(activity, UsersListActivity.class);
-                accountsIntent.putExtra("EMAIL", mTextInputEditTextEmail.getText().toString().trim());
-                emptyInputEditText();
-                startActivity(accountsIntent);
+                goToMainActivity();
             }else{
                 System.out.println("START HOMEPAGE");
             }
@@ -209,6 +208,25 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
             emptyInputEditText();
         }
+    }
+
+    /**
+     * Method to load mainActivity
+     */
+    public void goToMainActivity(){
+        checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+        Intent accountsIntent = new Intent(activity, UsersListActivity.class);
+        accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
+        emptyInputEditText();
+        startActivity(accountsIntent);
+    }
+
+    public void goToAdminDashboard(){
+        Intent accountsIntent = new Intent(activity, MainActivity.class);
+        accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
+        emptyInputEditText();
+        checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+        startActivity(accountsIntent);
     }
 
     /**

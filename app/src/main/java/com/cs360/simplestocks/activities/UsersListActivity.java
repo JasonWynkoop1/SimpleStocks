@@ -1,11 +1,13 @@
 package com.cs360.simplestocks.activities;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import androidx.annotation.Nullable;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import com.androidtutorialshub.loginregister.R;
+
+import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.adapters.UsersRecyclerAdapter;
 import com.cs360.simplestocks.model.User;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
@@ -34,10 +36,13 @@ public class UsersListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
         Objects.requireNonNull(getSupportActionBar()).setTitle("");
+
         initViews();
         initObjects();
 
     }
+
+
 
     /**
      * This method is to initialize views

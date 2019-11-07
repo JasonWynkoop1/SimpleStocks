@@ -29,11 +29,11 @@ public class InputValidation {
      * @param message
      * @return
      */
-    public boolean isInputEditTextFilled(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message){
+    public boolean checkForUserInput(TextInputEditText textInputEditText, TextInputLayout textInputLayout, String message){
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty()){
             textInputLayout.setError(message);
-            hideKeyboardFrom(textInputEditText);
+           //closeKeyboard(textInputEditText);
             return false;
         }else{
             textInputLayout.setErrorEnabled(false);
@@ -45,20 +45,20 @@ public class InputValidation {
     /**
      *
      * @param textInputEditText1
-     * @param textInputEditText2
-     * @param textInputLayout
+     * @param inputText
+     * @param inputTextLayout
      * @param message
      * @return
      */
-    public boolean isInputEditTextMatches(TextInputEditText textInputEditText1, TextInputEditText textInputEditText2, TextInputLayout textInputLayout, String message) {
+    public boolean doPasswordsMatch(TextInputEditText textInputEditText1, TextInputEditText inputText, TextInputLayout inputTextLayout, String message) {
         String value1 = textInputEditText1.getText().toString().trim();
-        String value2 = textInputEditText2.getText().toString().trim();
+        String value2 = inputText.getText().toString().trim();
         if (!value1.contentEquals(value2)) {
-            textInputLayout.setError(message);
-            hideKeyboardFrom(textInputEditText2);
+            inputTextLayout.setError(message);
+            closeKeyboard(inputText);
             return false;
         } else {
-            textInputLayout.setErrorEnabled(false);
+            inputTextLayout.setErrorEnabled(false);
         }
         return true;
     }
@@ -75,7 +75,7 @@ public class InputValidation {
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
             textInputLayout.setError(message);
-            hideKeyboardFrom(textInputEditText);
+            closeKeyboard(textInputEditText);
             return false;
         } else {
             textInputLayout.setErrorEnabled(false);
@@ -88,7 +88,7 @@ public class InputValidation {
      *
      * @param view
      */
-    private void hideKeyboardFrom(View view) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    private void closeKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }}

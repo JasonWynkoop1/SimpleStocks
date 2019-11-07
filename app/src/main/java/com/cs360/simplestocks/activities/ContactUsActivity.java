@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.androidtutorialshub.loginregister.R;
+import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -52,7 +52,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
     /**
      * Implemented method to listen for the click on view
-     * @param v
+     * @param v - view that was clicked on
      */
     @Override
     public void onClick(View v) {
@@ -60,7 +60,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
             case R.id.appCompatButtonLogin:
                 verifyInput();
                 Intent it = new Intent(Intent.ACTION_SEND);
-                it.putExtra(Intent.EXTRA_EMAIL, new String[]{mTextInputEditTextEmail.getText().toString()});
+                it.putExtra(Intent.EXTRA_EMAIL, new String[]{Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString()});
                 it.putExtra(Intent.EXTRA_TEXT,mEditText.getText());
                 it.setType("message/rfc822");
                 startActivity(Intent.createChooser(it,"Choose Mail App"));

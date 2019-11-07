@@ -26,6 +26,19 @@
             android:textColor="@color/colorSimpleStocksTitle"
             android:textSize="70dp" />
 
+        <TextView
+            android:id="@+id/register_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-smallcaps"
+            android:lineSpacingExtra="24sp"
+            android:paddingTop="50sp"
+            android:text="Register"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorSimpleStocksTitle"
+            android:textSize="30sp" />
+
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +55,7 @@
                 android:id="@+id/textInputEditTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_name"
                 android:inputType="text"
                 android:maxLines="1"
@@ -58,6 +72,7 @@
                 android:id="@+id/textInputEditTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_email"
                 android:inputType="text"
                 android:maxLines="1"
@@ -74,6 +89,7 @@
                 android:id="@+id/textInputEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
@@ -90,6 +106,7 @@
                 android:id="@+id/textInputEditTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_confirm_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
@@ -102,13 +119,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:background="@color/colorTextHint"
-            android:text="@string/text_register" />
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/text_register"
+            android:textColor="#264653" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/APP_COMPAT_TEXT_VIEW_LOGIN_LINK"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
             android:text="Already a member? Login"
             android:textSize="16sp" />

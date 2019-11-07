@@ -67,10 +67,11 @@
             android:gravity="top|fill_vertical"
             android:hint="@string/hint_message"
             android:inputType="text|textMultiLine"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:autofillHints="" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/BUTTON_SEND_MESSAGE"
+        <Button
+            android:id="@+id/button"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

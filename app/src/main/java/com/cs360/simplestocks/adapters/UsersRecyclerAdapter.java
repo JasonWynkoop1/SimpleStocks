@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.androidtutorialshub.loginregister.R;
+import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.model.User;
 import java.util.List;
 import androidx.appcompat.widget.AppCompatTextView;
