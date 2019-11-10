@@ -4,6 +4,7 @@ title __APP's Class Diagram__\n
 
   namespace com.androidtutorialshub.loginregister {
     class com.androidtutorialshub.loginregister.BuildConfig {
+
     }
   }
   

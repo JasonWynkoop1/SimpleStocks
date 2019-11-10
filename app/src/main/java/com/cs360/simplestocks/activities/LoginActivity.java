@@ -1,11 +1,24 @@
 package com.cs360.simplestocks.activities;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import com.cs360.simplestocks.helpers.InputValidation;
+import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
+import com.cs360.simplestocks.utilities.GetStockData;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.simplestocks.loginregister.R;
+
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,16 +27,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
-
-import com.cs360.simplestocks.utilities.GetStockData;
-import com.simplestocks.loginregister.R;
-import com.cs360.simplestocks.helpers.InputValidation;
-import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements  View.OnClickListener{
 
@@ -57,6 +60,15 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         setContentView(R.layout.activity_login);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+        if (isNetwork(getApplicationContext())) {
+
+            Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
+        }
+
         initializeViews();
         initializeListeners();
         initializeObjects();
@@ -66,7 +78,13 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     }
 
+    public boolean isNetwork(Context context) {
 
+        ConnectivityManager cm = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 
     /**
      * Function to check and request permission.

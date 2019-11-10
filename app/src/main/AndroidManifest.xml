@@ -4,11 +4,10 @@
     package="com.simplestocks.loginregister">
 
     <!-- Declaring the required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
@@ -18,13 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+
         <activity
             android:name="com.cs360.simplestocks.activities.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
-        <activity android:name="com.cs360.simplestocks.activities.SplashActivity" />
-        <activity
-            android:name="com.cs360.simplestocks.activities.LoginActivity"
-            android:screenOrientation="portrait">
+            android:label="@string/title_activity_settings">
+
+        </activity>
+        <activity android:name="com.cs360.simplestocks.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,8 +32,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.cs360.simplestocks.activities.LoginActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name="com.cs360.simplestocks.activities.RegisterActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name="com.cs360.simplestocks.activities.UsersListActivity"
             android:screenOrientation="portrait" />

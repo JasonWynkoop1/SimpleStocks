@@ -21,10 +21,15 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/patriques82/maven"
+        }
+    }
 }
 
 dependencies {
-    implementation group: 'com.yahoofinance-api', name: 'YahooFinanceAPI', version: '3.15.0'
+    implementation 'org.patriques:alphavantage4j:1.4'
     implementation 'com.google.android.material:material:1.2.0-alpha01'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'

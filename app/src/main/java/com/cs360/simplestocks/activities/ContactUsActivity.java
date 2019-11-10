@@ -1,31 +1,27 @@
 package com.cs360.simplestocks.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.widget.NestedScrollView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
+import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.widget.NestedScrollView;
 
 public class ContactUsActivity extends AppCompatActivity implements View.OnClickListener {
     private final AppCompatActivity activity = ContactUsActivity.this;
     private InputValidation inputValidation;
-    private NestedScrollView nestedScrollView;
-
-    private AppCompatButton appCompatSendButton;
 
     private TextInputLayout mTextInputLayoutEmail;
-    private TextInputLayout mtextInputLayoutName;
+    private TextInputLayout mTextInputLayoutName;
 
     private EditText mEditText;
     private TextInputEditText mTextInputEditTextEmail;
@@ -73,12 +69,12 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
      * initializing view
      */
     private void initializeViews(){
-        nestedScrollView = findViewById(R.id.NESTED_SCROLL_VIEW);
+        NestedScrollView nestedScrollView = findViewById(R.id.NESTED_SCROLL_VIEW);
         mTextInputEditName = findViewById(R.id.TEXT_INPUT_EDIT_NAME);
-        mtextInputLayoutName = findViewById(R.id.TEXT_INPUT_LAYOUT_NAME);
+        mTextInputLayoutName = findViewById(R.id.TEXT_INPUT_LAYOUT_NAME);
         mTextInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
         mTextInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
-        appCompatSendButton = findViewById(R.id.BUTTON_SEND_MESSAGE);
+        AppCompatButton appCompatSendButton = findViewById(R.id.BUTTON_SEND_MESSAGE);
         mEditText = findViewById(R.id.TEXT_INPUT_LAYOUT_MESSAGE_CONTACT_US);
     }
 
@@ -96,7 +92,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
      *
      */
     private void verifyInput(){
-        if (!inputValidation.checkForUserInput(mTextInputEditName, mtextInputLayoutName, getString(R.string.error_message_name))) {
+        if (!inputValidation.checkForUserInput(mTextInputEditName, mTextInputLayoutName, getString(R.string.error_message_name))) {
             return;
         }
         if (!inputValidation.checkForUserInput(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))){
