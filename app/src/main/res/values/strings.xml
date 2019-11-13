@@ -21,9 +21,9 @@
     <string name="text_hello">Hello,</string>
     <string name="text_title">Simple Stocks</string>
     <string name="title_activity_homepage">HomepageActivity</string>
-    <string name="title_home">Welcome Back: </string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_settings">Settings</string>
     <string name="simple_stocks">Simple Stocks</string>
     <string name="contact_us">Contact Us</string>
     <string name="hint_message">Message</string>

@@ -212,9 +212,9 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         if (mSQLiteDatabaseHelper.checkIfUserExists(Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim()
                 , Objects.requireNonNull(mTextInputEditPassword.getText()).toString().trim())) {
             if(mTextInputEditTextEmail.getText().toString().trim().equals("admin@test.com")) {
-                goToMainActivity();
+                goToAdminDashboard();
             }else{
-                System.out.println("START HOMEPAGE");
+                goToHomepageActivity();
             }
 
 
@@ -228,7 +228,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     /**
      * Method to load mainActivity
      */
-    public void goToMainActivity(){
+    public void goToAdminDashboard() {
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
         Intent accountsIntent = new Intent(activity, UsersListActivity.class);
         accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
@@ -236,8 +236,8 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         startActivity(accountsIntent);
     }
 
-    public void goToAdminDashboard(){
-        Intent accountsIntent = new Intent(activity, MainActivity.class);
+    public void goToHomepageActivity() {
+        Intent accountsIntent = new Intent(activity, HomepageActivity.class);
         accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
         emptyInputEditText();
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);

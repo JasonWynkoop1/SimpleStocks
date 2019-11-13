@@ -1,7 +1,7 @@
 package com.cs360.simplestocks.sql;
 
-import android.content.Context;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -74,6 +74,7 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_USER, null, values);
         db.close();
     }
+
 
     public List<User> getAllUser(){
         //An array of columns to fetch

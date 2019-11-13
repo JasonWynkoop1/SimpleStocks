@@ -23,7 +23,7 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
     protected Long doInBackground(URL... urls) {
         long totalSize = 0;
         String apiKey = "TA3UVF5BL5LIX4WF";
-        int timeout = 1000;
+        int timeout = 3000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         TimeSeries stockTimeSeries = new TimeSeries(apiConnector);
 

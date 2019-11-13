@@ -90,7 +90,7 @@ public class UsersListActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                pd = ProgressDialog.show(UsersListActivity.this, "LOADING", "Loading", true,
+                pd = ProgressDialog.show(UsersListActivity.this, "LOADING", "Loading users list...", true,
                         false); // Create and show Progress dialog
             }
             @Override
