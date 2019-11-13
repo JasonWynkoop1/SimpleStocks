@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         textView = findViewById(R.id.splash_screen_title);
         textView.setText("Simple Stocks");
 
-        final long period = 40;
+        final long period = 20;
 
         timer = new Timer();
         timer.schedule(new TimerTask() {
