@@ -1,21 +1,21 @@
 package com.cs360.simplestocks.activities;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import androidx.annotation.Nullable;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.adapters.UsersRecyclerAdapter;
 import com.cs360.simplestocks.model.User;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
+import com.cs360.simplestocks.utilities.GetStockData;
+import com.simplestocks.loginregister.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -39,6 +39,9 @@ public class UsersListActivity extends AppCompatActivity {
 
         initViews();
         initObjects();
+
+        GetStockData getStockData = new GetStockData();
+        getStockData.execute();
 
     }
 

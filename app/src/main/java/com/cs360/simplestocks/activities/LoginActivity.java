@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
-import com.cs360.simplestocks.utilities.GetStockData;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -73,8 +72,6 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         initializeListeners();
         initializeObjects();
 
-        GetStockData getStockData = new GetStockData();
-        getStockData.execute();
 
     }
 

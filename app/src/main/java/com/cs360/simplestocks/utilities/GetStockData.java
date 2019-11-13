@@ -1,36 +1,38 @@
 package com.cs360.simplestocks.utilities;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
+import android.os.Build;
 
 import org.patriques.AlphaVantageConnector;
-import org.patriques.TechnicalIndicators;
-import org.patriques.input.technicalindicators.Interval;
-import org.patriques.input.technicalindicators.SeriesType;
-import org.patriques.input.technicalindicators.TimePeriod;
+import org.patriques.TimeSeries;
+import org.patriques.input.timeseries.Interval;
+import org.patriques.input.timeseries.OutputSize;
 import org.patriques.output.AlphaVantageException;
-import org.patriques.output.technicalindicators.MACD;
-import org.patriques.output.technicalindicators.data.MACDData;
+import org.patriques.output.timeseries.IntraDay;
+import org.patriques.output.timeseries.data.StockData;
 
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
+import androidx.annotation.RequiresApi;
+
 public class GetStockData extends AsyncTask<URL, Integer, Long> {
     // Do the long-running work in here
-    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.N)
     protected Long doInBackground(URL... urls) {
         long totalSize = 0;
-        /*String apiKey = "019M45EW54CH5QXR";
-        int timeout = 3000;
+        String apiKey = "TA3UVF5BL5LIX4WF";
+        int timeout = 1000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         TimeSeries stockTimeSeries = new TimeSeries(apiConnector);
 
         try {
-            IntraDay response = stockTimeSeries.intraDay("MSFT", Interval.ONE_MIN, OutputSize.FULL);
+            IntraDay response = stockTimeSeries.intraDay("MSFT", Interval.SIXTY_MIN, OutputSize.COMPACT);
             Map<String, String> metaData = response.getMetaData();
             System.out.println("Information: " + metaData.get("1. Information"));
             System.out.println("Stock: " + metaData.get("2. Symbol"));
+
             List<StockData> stockData = response.getStockData();
             stockData.forEach(stock -> {
                 System.out.println("date:   " + stock.getDateTime());
@@ -42,28 +44,6 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
             });
         } catch (AlphaVantageException e) {
             System.out.println("something went wrong");
-        }*/
-
-        String apiKey = "019M45EW54CH5QXR";
-        int timeout = 3000;
-        AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
-        TechnicalIndicators technicalIndicators = new TechnicalIndicators(apiConnector);
-
-        try {
-            MACD response = technicalIndicators.macd("MSFT", Interval.DAILY, TimePeriod.of(10), SeriesType.CLOSE, null, null, null);
-            Map<String, String> metaData = response.getMetaData();
-            System.out.println("Symbol: " + metaData.get("1: Symbol"));
-            System.out.println("Indicator: " + metaData.get("2: Indicator"));
-
-            List<MACDData> macdData = response.getData();
-            macdData.forEach(data -> {
-                System.out.println("date:           " + data.getDateTime());
-                System.out.println("MACD Histogram: " + data.getHist());
-                System.out.println("MACD Signal:    " + data.getSignal());
-                System.out.println("MACD:           " + data.getMacd());
-            });
-        } catch (AlphaVantageException e) {
-            System.out.println("something went wrong");
         }
         return totalSize;
 
@@ -71,6 +51,7 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
 
     // This is called each time you call publishProgress()
     protected void onProgressUpdate(Integer... progress) {
+        System.out.println("Still loading");
     }
 
     // This is called when doInBackground() is finished
