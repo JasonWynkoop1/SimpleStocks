@@ -1,4 +1,4 @@
-<resources>
+<resouces>
     <!-- Reply Preference -->
     <string-array name="reply_entries">
         <item>Reply</item>
@@ -9,4 +9,4 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
-</resources>
+</resouces>

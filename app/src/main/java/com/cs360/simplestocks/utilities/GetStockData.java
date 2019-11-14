@@ -52,7 +52,7 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
 
     // This is called each time you call publishProgress()
     protected void onProgressUpdate(Integer... progress) {
-        System.out.println("Still loadingkk");
+        System.out.println("Still loadingk");
     }
 
     // This is called when doInBackground() is finished
