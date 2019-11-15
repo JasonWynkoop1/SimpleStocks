@@ -8,13 +8,19 @@
         tools:ignore="MenuTitle" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_search"
         android:icon="@drawable/ic_action_search"
         tools:ignore="MenuTitle" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/ic_action_account"
         tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_action_settings"
+        tools:ignore="MenuTitle" />
+
 
 </menu>

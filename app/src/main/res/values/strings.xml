@@ -7,11 +7,16 @@
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="text_login">Login</string>
     <string name="text_register">Register</string>
+
+    <!-- Error Messages -->
     <string name="error_message_name">Enter Full Name</string>
     <string name="error_message_email">Enter Valid Email</string>
     <string name="error_message_age">Enter Age</string>
     <string name="error_message_password">Enter Password</string>
+
+    <!-- Success Message -->
     <string name="success_message">Registration Successful</string>
+
     <string name="text_not_member">Not registered? Sign up here</string>
     <string name="text_already_member">Already a member? Login</string>
     <string name="error_email_exists">Email Already Exists</string>
@@ -46,4 +51,5 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="contact_us_text">Contact Us</string>
     <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="title_account">account</string>
 </resources>

@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.cs360.simplestocks.activities.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_search"
+        android:name="com.cs360.simplestocks.activities.ui.settings.SettingsFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.cs360.simplestocks.activities.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_account"
+        android:name="com.cs360.simplestocks.activities.ui.search.SearchFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.cs360.simplestocks.activities.ui.search.SearchFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_account" />
 </navigation>
