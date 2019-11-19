@@ -1853,7 +1853,6 @@ id text_account
 id text_home
 id text_input_end_icon
 id text_input_start_icon
-id text_search
 id text_settings
 id text_view_contact_us
 id textinput_counter
@@ -2169,7 +2168,6 @@ string text_login
 string text_not_member
 string text_register
 string text_title
-string title_account
 string title_activity_homepage
 string title_activity_settings
 string title_home

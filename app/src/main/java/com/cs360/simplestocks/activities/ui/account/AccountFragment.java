@@ -1,4 +1,4 @@
-package com.cs360.simplestocks.activities.ui.notifications;
+package com.cs360.simplestocks.activities.ui.account;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,17 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-public class NotificationsFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private AccountViewModel mAccountViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
+        mAccountViewModel =
+                ViewModelProviders.of(this).get(AccountViewModel.class);
         View root = inflater.inflate(R.layout.fragment_account, container, false);
         //final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        mAccountViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 //textView.setText(s);

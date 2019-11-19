@@ -885,16 +885,16 @@ public final class R {
         public static final int text2 = 0x7f0a012a;
         public static final int textSpacerNoButtons = 0x7f0a0132;
         public static final int textSpacerNoTitle = 0x7f0a0133;
-        public static final int time = 0x7f0a0144;
-        public static final int title = 0x7f0a0145;
-        public static final int titleDividerNoCustom = 0x7f0a0146;
-        public static final int title_template = 0x7f0a0148;
-        public static final int top = 0x7f0a0149;
-        public static final int topPanel = 0x7f0a014a;
-        public static final int unchecked = 0x7f0a0151;
-        public static final int uniform = 0x7f0a0152;
-        public static final int up = 0x7f0a0154;
-        public static final int wrap_content = 0x7f0a015a;
+        public static final int time = 0x7f0a0143;
+        public static final int title = 0x7f0a0144;
+        public static final int titleDividerNoCustom = 0x7f0a0145;
+        public static final int title_template = 0x7f0a0147;
+        public static final int top = 0x7f0a0148;
+        public static final int topPanel = 0x7f0a0149;
+        public static final int unchecked = 0x7f0a0150;
+        public static final int uniform = 0x7f0a0151;
+        public static final int up = 0x7f0a0153;
+        public static final int wrap_content = 0x7f0a0159;
     }
     public static final class integer {
         private integer() {}
@@ -1014,8 +1014,8 @@ public final class R {
         public static final int search_menu_title = 0x7f12006a;
         public static final int status_bar_notification_info_overflow = 0x7f12006d;
         public static final int summary_collapsed_preference_list = 0x7f12006f;
-        public static final int v7_preference_off = 0x7f12007f;
-        public static final int v7_preference_on = 0x7f120080;
+        public static final int v7_preference_off = 0x7f12007e;
+        public static final int v7_preference_on = 0x7f12007f;
     }
     public static final class style {
         private style() {}

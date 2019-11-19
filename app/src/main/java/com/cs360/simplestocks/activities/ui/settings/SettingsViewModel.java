@@ -1,14 +1,14 @@
-package com.cs360.simplestocks.activities.ui.dashboard;
+package com.cs360.simplestocks.activities.ui.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class SettingsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public SettingsViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is dashboard fragment");
     }
