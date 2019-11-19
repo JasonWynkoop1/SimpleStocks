@@ -1,16 +1,16 @@
-package com.cs360.simplestocks.activities.ui.search;
+package com.cs360.simplestocks.activities.ui.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SearchViewModel extends ViewModel {
+public class DashboardViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SearchViewModel() {
+    public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
