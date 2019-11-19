@@ -1482,7 +1482,10 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_action_account
 drawable ic_action_home
+drawable ic_action_search
+drawable ic_action_settings
 drawable ic_arrow_down_24dp
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
@@ -1733,10 +1736,11 @@ id multiply
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_view
-id navigation_dashboard
+id navigation_account
 id navigation_header_container
 id navigation_home
-id navigation_notifications
+id navigation_search
+id navigation_settings
 id never
 id noScroll
 id none
@@ -1849,6 +1853,7 @@ id text_account
 id text_home
 id text_input_end_icon
 id text_input_start_icon
+id text_search
 id text_settings
 id text_view_contact_us
 id textinput_counter
@@ -1966,6 +1971,7 @@ layout design_text_input_start_icon
 layout expand_button
 layout fragment_account
 layout fragment_home
+layout fragment_search
 layout fragment_settings
 layout image_frame
 layout item_user_recycler
@@ -2163,6 +2169,7 @@ string text_login
 string text_not_member
 string text_register
 string text_title
+string title_account
 string title_activity_homepage
 string title_activity_settings
 string title_home
