@@ -8,7 +8,6 @@ import android.os.Bundle;
 import com.cs360.simplestocks.adapters.UsersRecyclerAdapter;
 import com.cs360.simplestocks.model.User;
 import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
-import com.cs360.simplestocks.utilities.GetStockData;
 import com.simplestocks.loginregister.R;
 
 import java.util.ArrayList;
@@ -39,9 +38,6 @@ public class UsersListActivity extends AppCompatActivity {
 
         initViews();
         initObjects();
-
-        GetStockData getStockData = new GetStockData();
-        getStockData.execute();
 
     }
 
