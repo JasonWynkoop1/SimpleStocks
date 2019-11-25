@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.cs360.simplestocks.adapters.UsersRecyclerAdapter;
 import com.cs360.simplestocks.model.User;
-import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
+import com.cs360.simplestocks.sql.UserDatabaseHelper;
 import com.simplestocks.loginregister.R;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class UsersListActivity extends AppCompatActivity {
     private RecyclerView recyclerViewUsers;
     private static List<User> listUsers;
     private static UsersRecyclerAdapter usersRecyclerAdapter;
-    private static SQLiteDatabaseHelper sSQLiteDatabaseHelper;
+    private static UserDatabaseHelper userDatabaseHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class UsersListActivity extends AppCompatActivity {
         recyclerViewUsers.setItemAnimator(new DefaultItemAnimator());
         recyclerViewUsers.setHasFixedSize(true);
         recyclerViewUsers.setAdapter(usersRecyclerAdapter);
-        sSQLiteDatabaseHelper = new SQLiteDatabaseHelper(activity);
+        userDatabaseHelper = new UserDatabaseHelper(activity);
 
         String emailFromIntent = getIntent().getStringExtra("EMAIL");
         textViewName.setText(emailFromIntent);
@@ -92,7 +92,7 @@ public class UsersListActivity extends AppCompatActivity {
             @Override
             protected Void doInBackground(Void... params) {
                 listUsers.clear();
-                listUsers.addAll(sSQLiteDatabaseHelper.getAllUser());
+                listUsers.addAll(userDatabaseHelper.getAllUser());
 
                 return null;
             }

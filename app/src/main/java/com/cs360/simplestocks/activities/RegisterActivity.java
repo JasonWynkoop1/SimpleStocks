@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.simplestocks.loginregister.R;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.model.User;
-import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
+import com.cs360.simplestocks.sql.UserDatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
 
@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private AppCompatTextView appCompatTextViewLoginLink;
 
     private InputValidation inputValidation;
-    private SQLiteDatabaseHelper mSQLiteDatabaseHelper;
+    private UserDatabaseHelper userDatabaseHelper;
     private User user;
 
     @Override
@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      */
     private void initializeObjects() {
         inputValidation = new InputValidation(activity);
-        mSQLiteDatabaseHelper = new SQLiteDatabaseHelper(activity);
+        userDatabaseHelper = new UserDatabaseHelper(activity);
         user = new User();
 
     }
@@ -131,13 +131,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if (!mSQLiteDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
+        if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
 
             user.setName(Objects.requireNonNull(textInputEditTextName.getText()).toString().trim());
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
             user.setPassword(Objects.requireNonNull(textInputEditTextPassword.getText()).toString().trim());
 
-            mSQLiteDatabaseHelper.addUser(user);
+            userDatabaseHelper.addUser(user);
 
             // Snack Bar to show success message that record saved successfully
             Snackbar.make(mNestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG).show();

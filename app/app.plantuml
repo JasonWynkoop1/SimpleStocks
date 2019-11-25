@@ -52,7 +52,7 @@ title __APP's Class Diagram__\n
   
 
   namespace com.cs360.simplestocks.sql {
-    class com.cs360.simplestocks.sql.SQLiteDatabaseHelper {
+    class com.cs360.simplestocks.sql.UserDatabaseHelper {
     }
   }
   
@@ -251,17 +251,17 @@ title __APP's Class Diagram__\n
 
   com.cs360.simplestocks.activities.LoginActivity .up.|> android.view.View.OnClickListener
   com.cs360.simplestocks.activities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.sql.SQLiteDatabaseHelper : databaseHelper
+  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
   com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
   com.cs360.simplestocks.activities.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
   com.cs360.simplestocks.activities.RegisterActivity .up.|> android.view.View.OnClickListener
   com.cs360.simplestocks.activities.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.sql.SQLiteDatabaseHelper : databaseHelper
+  com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
   com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
   com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.model.User : user
   com.cs360.simplestocks.activities.UsersListActivity -up-|> androidx.appcompat.app.AppCompatActivity
   com.cs360.simplestocks.adapters.UsersRecyclerAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
-  com.cs360.simplestocks.sql.SQLiteDatabaseHelper -up-|> android.database.sqlite.SQLiteOpenHelper
+  com.cs360.simplestocks.sql.UserDatabaseHelper -up-|> android.database.sqlite.SQLiteOpenHelper
   com.cs360.simplestocks.stock_api.AlphaVantageConnector .up.|> com.cs360.simplestocks.stock_api.ApiConnector
   com.cs360.simplestocks.stock_api.DigitalCurrencies o-- com.cs360.simplestocks.stock_api.ApiConnector : apiConnector
   com.cs360.simplestocks.stock_api.SectorPerformances o-- com.cs360.simplestocks.stock_api.ApiConnector : apiConnector

@@ -11,27 +11,27 @@ import com.cs360.simplestocks.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
+public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Database version
     private static final int DATABASE_VERSION = 1;
 
     //Database name
-    private static final String DATABASE_NAME = "UserManager.db";
+    private static final String DATABASE_NAME = "UserDatabase.db";
 
     //User table name
-    private static final String TABLE_USER = "user";
+    private static final String TABLE_USER = "userTable";
 
     //User table columns names
-    private static final String COLUMN_USER_ID = "user_id";
-    private static final String COLUMN_USER_NAME = "user_name";
-    private static final String COLUMN_USER_EMAIL = "user_email";
-    private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_USER_ID = "id";
+    private static final String COLUMN_USER_NAME = "name";
+    private static final String COLUMN_USER_EMAIL = "email";
+    private static final String COLUMN_USER_PASSWORD = "password";
 
     /**
      * Constructor
      * @param context
      */
-    public SQLiteDatabaseHelper(Context context) {
+    public UserDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -59,8 +59,8 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Creating a new user record
-     * @param user
+     * New user creation
+     * @param user - new record for table
      */
     public void addUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -70,12 +70,17 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
 
-        //inserting row
+
         db.insert(TABLE_USER, null, values);
         db.close();
     }
 
 
+    /**
+     * Returns all users
+     *
+     * @return - user list
+     */
     public List<User> getAllUser(){
         //An array of columns to fetch
         String[] columns = {
@@ -85,18 +90,10 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_USER_PASSWORD
         };
 
-        //Sorting orders
         String sortOrder =
                 COLUMN_USER_NAME + " ASC";
         List<User> userList = new ArrayList<User>();
         SQLiteDatabase db = this.getReadableDatabase();
-
-        //query the user table
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id,user_name,user_email,user_password FROM user ORDER BY user_name;
-         */
 
         Cursor cursor = db.query(
                 TABLE_USER,
@@ -108,7 +105,6 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
                 sortOrder
         );
 
-        //Traversing through all rows and adding to list
         if(cursor.moveToFirst()){
             do{
                 User user = new User();
@@ -128,8 +124,8 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * updates user record
-     * @param user
+     * update user
+     * @param user - user to be updated
      */
     public void updateUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -146,8 +142,8 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Method for deleting a user record
-     * @param user
+     * Delete user from table
+     * @param user - user to delete
      */
     public void deleteUser(User user){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -165,30 +161,21 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
      * @return true if user exists
      */
     public boolean checkIfUserExists(String email){
-        //array of columns to fetch
         String[] columns = {COLUMN_USER_ID};
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        //selection criteria
         String selection = COLUMN_USER_EMAIL + " =?";
 
-        //selection argument
         String[] selectionArgs = {email};
 
-        //query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
-        Cursor cursor = db.query(TABLE_USER, //table to query
-                columns,                     //columns to return
-                selection,                   //columns to return
-                selectionArgs,               //the values for the WHERE clause
-                null,               //group the rows
-                null,                //filter by row groups
-                null                //the sort order
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
         );
 
         int cursorCount = cursor.getCount();
@@ -206,32 +193,22 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
      * @return
      */
     public boolean checkIfUserExists(String email, String password){
-        //array of columns to fetch
         String[] columns = {COLUMN_USER_ID};
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        //selection criteria
         String selection = COLUMN_USER_EMAIL + " =?" + " AND "
                            + COLUMN_USER_PASSWORD + " =?";
 
-        //selection argument
         String[] selectionArgs = {email, password};
 
-        //query user table with condition
-        // query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
-        Cursor cursor = db.query(TABLE_USER, //table to query
-                columns,                     //columns to return
-                selection,                   //columns to return
-                selectionArgs,               //the values for the WHERE clause
-                null,               //group the rows
-                null,                //filter by row groups
-                null                //the sort order
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
         );
 
         int cursorCount = cursor.getCount();

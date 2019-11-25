@@ -4,7 +4,7 @@ ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidM
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-62:12
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-62:12
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-62:12
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/26ee40011cd87e86654f02f8593f51a6/MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
+MERGED from [com.github.PhilJay:MPAndroidChart-Realm:v3.0.3] /Users/Jason/.gradle/caches/transforms-2/files-2.1/c139cd544c32b08198aef18d86715532/MPAndroidChart-Realm-v3.0.3/AndroidManifest.xml:2:1-16:12
 MERGED from [androidx.navigation:navigation-ui:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a8547062fc0b0dfe14324a97a8b8ff3a/jetified-navigation-ui-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.0-alpha01] /Users/Jason/.gradle/caches/transforms-2/files-2.1/4538d57e63975b8a2f5a8197d0ffbf75/material-1.2.0-alpha01/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.preference:preference:1.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/6414a333410d145d0174e2c4e728932f/preference-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -182,8 +182,8 @@ uses-sdk
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/26ee40011cd87e86654f02f8593f51a6/MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
-MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/26ee40011cd87e86654f02f8593f51a6/MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart-Realm:v3.0.3] /Users/Jason/.gradle/caches/transforms-2/files-2.1/c139cd544c32b08198aef18d86715532/MPAndroidChart-Realm-v3.0.3/AndroidManifest.xml:12:5-14:41
+MERGED from [com.github.PhilJay:MPAndroidChart-Realm:v3.0.3] /Users/Jason/.gradle/caches/transforms-2/files-2.1/c139cd544c32b08198aef18d86715532/MPAndroidChart-Realm-v3.0.3/AndroidManifest.xml:12:5-14:41
 MERGED from [androidx.navigation:navigation-ui:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a8547062fc0b0dfe14324a97a8b8ff3a/jetified-navigation-ui-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-ui:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a8547062fc0b0dfe14324a97a8b8ff3a/jetified-navigation-ui-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.2.0-alpha01] /Users/Jason/.gradle/caches/transforms-2/files-2.1/4538d57e63975b8a2f5a8197d0ffbf75/material-1.2.0-alpha01/AndroidManifest.xml:20:5-44

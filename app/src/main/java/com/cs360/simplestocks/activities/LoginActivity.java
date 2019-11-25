@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.cs360.simplestocks.helpers.InputValidation;
-import com.cs360.simplestocks.sql.SQLiteDatabaseHelper;
+import com.cs360.simplestocks.sql.UserDatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     private AppCompatTextView textViewLinkContactUs;
 
     private InputValidation inputValidation;
-    private SQLiteDatabaseHelper mSQLiteDatabaseHelper;
+    private UserDatabaseHelper userDatabaseHelper;
 
     private static final int STORAGE_PERMISSION_CODE = 101;
 
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         setContentView(R.layout.activity_login);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        if (isNetwork(getApplicationContext())) {
+        if (chekcingNetworkConnection(getApplicationContext())) {
 
             Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
 
@@ -75,11 +75,12 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     }
 
-    public boolean isNetwork(Context context) {
+    public boolean chekcingNetworkConnection(Context context) {
 
         ConnectivityManager cm = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        System.out.println(netInfo);
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
@@ -89,8 +90,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      * @param permission - permission
      * @param requestCode - code being requested
      */
-    public void checkPermission(String permission, int requestCode)
-    {
+    public void checkPermission(String permission, int requestCode) {
         if (ContextCompat.checkSelfPermission(LoginActivity.this, permission)
                 == PackageManager.PERMISSION_DENIED) {
 
@@ -98,13 +98,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             ActivityCompat.requestPermissions(LoginActivity.this,
                     new String[] { permission },
                     requestCode);
-        } /*else {
-            Toast.makeText(LoginActivity.this,
-                    "Permission already granted",
-                    Toast.LENGTH_SHORT)
-                    .show();
-        }*/
-
+        }
 
     }
 
@@ -187,11 +181,11 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     /**
      * initializing objects
      *
-     * mSQLiteDatabaseHelper
+     * userDatabaseHelper
      * input validator
      */
     private void initializeObjects(){
-        mSQLiteDatabaseHelper = new SQLiteDatabaseHelper(activity);
+        userDatabaseHelper = new UserDatabaseHelper(activity);
         inputValidation = new InputValidation(activity);
     }
 
@@ -209,7 +203,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             return;
         }
 
-        if (mSQLiteDatabaseHelper.checkIfUserExists(Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim()
+        if (userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim()
                 , Objects.requireNonNull(mTextInputEditPassword.getText()).toString().trim())) {
             if(mTextInputEditTextEmail.getText().toString().trim().equals("admin@test.com")) {
                 goToAdminDashboard();
