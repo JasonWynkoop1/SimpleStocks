@@ -1,4 +1,4 @@
-#Mon Nov 25 15:04:30 EST 2019
+#Mon Nov 25 19:41:42 EST 2019
 base.0=/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

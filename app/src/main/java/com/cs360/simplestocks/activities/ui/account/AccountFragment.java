@@ -15,15 +15,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class AccountFragment extends Fragment {
 
-    private AccountViewModel mAccountViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mAccountViewModel =
-                ViewModelProviders.of(this).get(AccountViewModel.class);
+        AccountViewModel accountViewModel = ViewModelProviders.of(this).get(AccountViewModel.class);
         View root = inflater.inflate(R.layout.fragment_account, container, false);
         //final TextView textView = root.findViewById(R.id.text_notifications);
-        mAccountViewModel.getText().observe(this, new Observer<String>() {
+        accountViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 //textView.setText(s);

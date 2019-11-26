@@ -16,15 +16,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class SearchFragment extends Fragment {
 
-    private SearchViewModel mSearchViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mSearchViewModel =
-                ViewModelProviders.of(this).get(SearchViewModel.class);
+        SearchViewModel searchViewModel = ViewModelProviders.of(this).get(SearchViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
         //final TextView textView = root.findViewById(R.id.text_dashboard);
-        mSearchViewModel.getText().observe(this, new Observer<String>() {
+        searchViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 //textView.setText(s);

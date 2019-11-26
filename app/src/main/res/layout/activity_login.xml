@@ -35,7 +35,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:lineSpacingExtra="24sp"
             android:paddingTop="50sp"
-            android:text="Login"
+            android:text="@string/login_small_title"
             android:textAlignment="viewStart"
             android:textColor="@color/colorSimpleStocksTitle"
             android:textSize="30sp" />

@@ -111,8 +111,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      * @param grantResults - grant results code
      */
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode,
                         permissions,
                         grantResults);

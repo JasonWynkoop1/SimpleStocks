@@ -35,16 +35,8 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
 
             List<StockData> stockData = response.getStockData();
             System.out.println(stockData.get(1).getOpen());
-            /*stockData.forEach(stock -> {
-                System.out.println("date:   " + stock.getDateTime());
-                System.out.println("open:   " + stock.getOpen());
-                System.out.println("high:   " + stock.getHigh());
-                System.out.println("low:    " + stock.getLow());
-                System.out.println("close:  " + stock.getClose());
-                System.out.println("volume: " + stock.getVolume());
-            });*/
         } catch (AlphaVantageException e) {
-            System.out.println("something went wrong");
+            System.out.println("Failed connecting to the Alpha Vantage api...");
         }
         return totalSize;
 

@@ -46,4 +46,8 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="contact_us_text">Contact Us</string>
     <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="login_small_title">Login</string>
+    <string name="register_small_title">Register</string>
+    <string name="already_a_member_login">Already a member? Login</string>
+    <string name="stock_trading_made_simple">Stock Trading Made Simple</string>
 </resources>

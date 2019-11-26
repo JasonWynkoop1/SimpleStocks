@@ -50,6 +50,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
      * Implemented method to listen for the click on view
      * @param v - view that was clicked on
      */
+    @SuppressWarnings("SwitchStatementWithTooFewBranches")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

@@ -4,7 +4,7 @@
             "outputFile": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/4538d57e63975b8a2f5a8197d0ffbf75/material-1.2.0-alpha01/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/12f5fefd267a516b087649cc29b8b339/material-1.2.0-alpha02/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

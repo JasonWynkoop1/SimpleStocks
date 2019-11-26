@@ -24,7 +24,7 @@
             android:text="@string/simple_stocks"
             android:textAlignment="viewStart"
             android:textColor="@color/colorSimpleStocksTitle"
-            android:textSize="70dp" />
+            android:textSize="70sp" />
 
         <TextView
             android:id="@+id/register_text"
@@ -34,7 +34,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:lineSpacingExtra="24sp"
             android:paddingTop="50sp"
-            android:text="Register"
+            android:text="@string/register_small_title"
             android:textAlignment="viewStart"
             android:textColor="@color/colorSimpleStocksTitle"
             android:textSize="30sp" />
@@ -130,7 +130,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
-            android:text="Already a member? Login"
+            android:text="@string/already_a_member_login"
             android:textSize="16sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

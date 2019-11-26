@@ -1,18 +1,15 @@
 package com.cs360.simplestocks.adapters;
 
-/**
- *  Here onCreateViewHolder() method inflates item_user_recycler.xml.
- *  In onBindViewHolder() method the appropriate User data
- *  (name,email and password) set to each row.
- */
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.simplestocks.loginregister.R;
+
 import com.cs360.simplestocks.model.User;
+import com.simplestocks.loginregister.R;
+
 import java.util.List;
+
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,13 +49,13 @@ public class UsersRecyclerAdapter extends RecyclerView.Adapter<UsersRecyclerAdap
      /**
      * ViewHolder class
      */
-    public class UserViewHolder extends RecyclerView.ViewHolder {
+    class UserViewHolder extends RecyclerView.ViewHolder {
 
-        public AppCompatTextView textViewName;
-        public AppCompatTextView textViewEmail;
-        public AppCompatTextView textViewPassword;
+        AppCompatTextView textViewName;
+        AppCompatTextView textViewEmail;
+        AppCompatTextView textViewPassword;
 
-        public UserViewHolder(View view) {
+        UserViewHolder(View view) {
             super(view);
             textViewName = view.findViewById(R.id.textViewName);
             textViewEmail = view.findViewById(R.id.textViewEmail);
