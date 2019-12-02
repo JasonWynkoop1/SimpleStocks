@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Purchase {
     private Stock stock;
-    private double quantity;
+    private int quantity;
     private Date purchaseDate;
 
-    public Purchase(Stock stock, double quantity, Date purchaseDate) {
+    public Purchase(Stock stock, int quantity, Date purchaseDate) {
         this.stock = stock;
         this.quantity = quantity;
         this.purchaseDate = purchaseDate;
@@ -25,7 +25,7 @@ public class Purchase {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
