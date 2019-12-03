@@ -50,4 +50,18 @@
     <string name="register_small_title">Register</string>
     <string name="already_a_member_login">Already a member? Login</string>
     <string name="stock_trading_made_simple">Stock Trading Made Simple</string>
+    <string name="desc_firebase_lockup">firebase lockup</string>
+    <string name="custom_token">custom token</string>
+    <string name="token_null">null token</string>
+    <string name="firebase_user_management">user management</string>
+    <string name="signed_out">signed out</string>
+    <string name="sign_in">sign in</string>
+    <string name="welcome_login_title">Welcome</string>
+    <string name="loading">Loading...</string>
+    <string name="emailpassword_title_text">Email and Password Login</string>
+    <string name="sign_out">sign out</string>
+    <string name="verify_email">verify email</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="auth_failed">Authentication failed</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.cs360.simplestocks.activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.cs360.simplestocks.activities.LoginActivities.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.simplestocks.loginregister.R;
 
 import java.util.Timer;
@@ -18,7 +20,6 @@ public class SplashActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i = 0;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class SplashActivity extends AppCompatActivity {
         textView.setText("Simple Stocks");
 
         final long period = 20;
+
 
         timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -43,8 +45,14 @@ public class SplashActivity extends AppCompatActivity {
                     //closing the timer
                     timer.cancel();
 
-                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                    startActivity(intent);
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        Intent intent = new Intent(SplashActivity.this, HomepageActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
 
                     // close this activity
                     finish();

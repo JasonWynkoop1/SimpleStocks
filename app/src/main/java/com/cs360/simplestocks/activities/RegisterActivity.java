@@ -1,16 +1,18 @@
 package com.cs360.simplestocks.activities;
 
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.model.User;
 import com.cs360.simplestocks.sql.UserDatabaseHelper;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
@@ -21,8 +23,9 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.widget.NestedScrollView;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final String TAG = "Register";
     private final AppCompatActivity activity = RegisterActivity.this;
     private NestedScrollView mNestedScrollView;
 
@@ -43,11 +46,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private UserDatabaseHelper userDatabaseHelper;
     private User user;
 
+    private FirebaseAuth mAuth;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         Objects.requireNonNull(getSupportActionBar()).hide();
+
+        mAuth = FirebaseAuth.getInstance();
 
         initializeViews();
         initializeListeners();
@@ -110,6 +117,35 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    private void createAccount(String email, String password) {
+        Log.d(TAG, "createAccount:" + email);
+
+        showProgressDialog();
+
+        // [START create_user_with_email]
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        //updateUI(user);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        //updateUI(null);
+                    }
+
+                    // [START_EXCLUDE]
+                    hideProgressDialog();
+                    // [END_EXCLUDE]
+                });
+        // [END create_user_with_email]
+    }
+
+
     /**
      * This method is to validate the input text fields and post data to SQLite
      */
@@ -131,7 +167,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
+        Log.i(TAG, "email: " + textInputEditTextEmail.getText().toString().trim());
+        createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
+
+        /*if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
 
             user.setName(Objects.requireNonNull(textInputEditTextName.getText()).toString().trim());
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
@@ -151,7 +190,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else {
             // Snack Bar to show error message that record already exists
             Snackbar.make(mNestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
-        }
+        }*/
     }
 
     /**

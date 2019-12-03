@@ -10,7 +10,7 @@ title __APP's Class Diagram__\n
   
 
   namespace com.cs360.simplestocks.activities {
-    class com.cs360.simplestocks.activities.LoginActivity {
+    class com.cs360.simplestocks.activities.LoginActivities.LoginActivity {
     }
   }
   
@@ -249,10 +249,10 @@ title __APP's Class Diagram__\n
   }
   
 
-  com.cs360.simplestocks.activities.LoginActivity .up.|> android.view.View.OnClickListener
-  com.cs360.simplestocks.activities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
-  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
+  com.cs360.simplestocks.activities.LoginActivities.LoginActivity .up.|> android.view.View.OnClickListener
+  com.cs360.simplestocks.activities.LoginActivities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.cs360.simplestocks.activities.LoginActivities.LoginActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
+  com.cs360.simplestocks.activities.LoginActivities.LoginActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
   com.cs360.simplestocks.activities.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
   com.cs360.simplestocks.activities.RegisterActivity .up.|> android.view.View.OnClickListener
   com.cs360.simplestocks.activities.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity

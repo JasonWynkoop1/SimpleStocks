@@ -9,7 +9,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
-    tools:context="com.cs360.simplestocks.activities.LoginActivity">
+    tools:context="com.cs360.simplestocks.activities.LoginActivities.LoginActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -20,25 +20,18 @@
             android:id="@+id/title_login_screen_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="@string/simple_stocks"
+            android:fontFamily="monospace"
+            android:paddingBottom="150sp"
+            android:text="@string/welcome_login_title"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/colorSimpleStocksTitle"
             android:textSize="60sp" />
 
         <TextView
-            android:id="@+id/login_text"
+            android:id="@+id/mStatusTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-smallcaps"
-            android:lineSpacingExtra="24sp"
-            android:paddingTop="50sp"
-            android:text="@string/login_small_title"
-            android:textAlignment="viewStart"
-            android:textColor="@color/colorSimpleStocksTitle"
-            android:textSize="30sp" />
+            android:layout_height="wrap_content" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TEXT_INPUT_LAYOUT_EMAIL"
@@ -50,7 +43,6 @@
                 android:id="@+id/textInputEditTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_email"
                 android:inputType="text"
                 android:maxLines="1"
@@ -68,7 +60,6 @@
                 android:id="@+id/textInputEditTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-smallcaps"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
@@ -80,7 +71,6 @@
             android:id="@+id/keep_user_logged_in_checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/keep_me_logged_in"
             android:textColor="@color/colorPrimary" />
 
@@ -90,7 +80,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:background="@color/colorTextHint"
-            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/text_login"
             android:textSize="20sp" />
 
@@ -99,7 +88,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
             android:text="@string/text_not_member"
             android:textSize="16sp" />
@@ -109,7 +97,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
             android:gravity="center"
             android:text="@string/contact_us_text"
             android:textSize="16sp" />

@@ -19,7 +19,6 @@
             android:id="@+id/text_view_contact_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/contact_us"
             android:textColor="@color/colorSimpleStocksTitle"
             android:textSize="30sp" />

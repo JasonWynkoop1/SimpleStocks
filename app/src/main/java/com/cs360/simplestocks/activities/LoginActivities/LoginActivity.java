@@ -1,20 +1,25 @@
-package com.cs360.simplestocks.activities;
+package com.cs360.simplestocks.activities.LoginActivities;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cs360.simplestocks.activities.BaseActivity;
+import com.cs360.simplestocks.activities.ContactUsActivity;
+import com.cs360.simplestocks.activities.HomepageActivity;
+import com.cs360.simplestocks.activities.RegisterActivity;
+import com.cs360.simplestocks.activities.UsersListActivity;
 import com.cs360.simplestocks.helpers.InputValidation;
-import com.cs360.simplestocks.sql.UserDatabaseHelper;
-import com.google.android.material.snackbar.Snackbar;
+import com.cs360.simplestocks.utilities.CheckInternetConnection;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
@@ -25,19 +30,17 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.widget.NestedScrollView;
 
-public class LoginActivity extends AppCompatActivity implements  View.OnClickListener{
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private final AppCompatActivity activity = LoginActivity.this;
-
-    private NestedScrollView nestedScrollView;
 
     private TextInputLayout mTextInputLayoutEmail;
     private TextInputLayout textInputLayoutPassword;
 
     private TextInputEditText mTextInputEditTextEmail;
     private TextInputEditText mTextInputEditPassword;
+    private static final String TAG = "Login";
 
     private AppCompatButton appCompatButtonLogin;
 
@@ -45,9 +48,10 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     private AppCompatTextView textViewLinkContactUs;
 
     private InputValidation inputValidation;
-    private UserDatabaseHelper userDatabaseHelper;
 
     private static final int STORAGE_PERMISSION_CODE = 101;
+    private TextView mStatusTextView;
+    private FirebaseAuth mAuth;
 
     /**
      *
@@ -56,10 +60,11 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_login);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        if (chekcingNetworkConnection(getApplicationContext())) {
+        if (CheckInternetConnection.chekcingNetworkConnection(getApplicationContext())) {
 
             Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
 
@@ -75,13 +80,20 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
 
     }
 
-    public boolean chekcingNetworkConnection(Context context) {
+    public void onStart() {
+        super.onStart();
+        System.out.println("START START START");
 
-        ConnectivityManager cm = (ConnectivityManager) context
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        System.out.println(netInfo);
-        return netInfo != null && netInfo.isConnectedOrConnecting();
+        //check if user is signed it (non null) and update UI accordingly
+        FirebaseUser currentUser;
+        if (mAuth.getCurrentUser() != null) {
+            currentUser = mAuth.getCurrentUser();
+            Log.i(TAG, "onStart: " + currentUser);
+            //mAuth.addAuthStateListener(authStateListener);
+        } else {
+            Log.i(TAG, "onStart: user is not currently logged in");
+        }
+
     }
 
     /**
@@ -158,7 +170,6 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      * initializing view
      */
     private void initializeViews(){
-        nestedScrollView = findViewById(R.id.NESTED_SCROLL_VIEW);
         mTextInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
         textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
         mTextInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
@@ -166,6 +177,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         appCompatButtonLogin = findViewById(R.id.appCompatButtonLogin);
         textViewLinkRegister = findViewById(R.id.TEXT_VIEW_LINK_REGISTER);
         textViewLinkContactUs = findViewById(R.id.TEXT_VIEW_LINK_CONTACT_US);
+        mStatusTextView = findViewById(R.id.mStatusTextView);
     }
 
     /**
@@ -184,7 +196,6 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
      * input validator
      */
     private void initializeObjects(){
-        userDatabaseHelper = new UserDatabaseHelper(activity);
         inputValidation = new InputValidation(activity);
     }
 
@@ -202,24 +213,46 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
             return;
         }
 
-        if (userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim()
-                , Objects.requireNonNull(mTextInputEditPassword.getText()).toString().trim())) {
-            if(mTextInputEditTextEmail.getText().toString().trim().equals("admin@test.com")) {
-                goToAdminDashboard();
-            }else{
-                goToHomepageActivity();
-            }
+        signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
 
+    }
 
-        } else {
-            // Snack Bar to show success message that record is wrong
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
-            emptyInputEditText();
-        }
+    private void signIn(String email, String password) {
+        Log.d(TAG, "signIn:" + email);
+
+        showProgressDialog();
+
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+                        goToHomepageActivity();
+                        //updateUI(user);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        //updateUI(null);
+                    }
+
+                    // [START_EXCLUDE]
+                    if (!task.isSuccessful()) {
+                        mStatusTextView.setText(R.string.auth_failed);
+                    }
+                    hideProgressDialog();
+                    // [END_EXCLUDE]
+                });
+        // [END sign_in_with_email]
     }
 
     /**
-     * Method to load mainActivity
+     * Method to load admin dashboard
      */
     public void goToAdminDashboard() {
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
@@ -228,6 +261,7 @@ public class LoginActivity extends AppCompatActivity implements  View.OnClickLis
         emptyInputEditText();
         startActivity(accountsIntent);
     }
+
 
     public void goToHomepageActivity() {
         Intent accountsIntent = new Intent(activity, HomepageActivity.class);

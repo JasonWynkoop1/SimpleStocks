@@ -9,127 +9,207 @@
 8-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
 9-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
-10
-11    <!-- Declaring the required permissions -->
-12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:8:5-67
-12-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:8:22-64
-13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:9:5-79
-13-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:9:22-76
-14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:10:5-80
-14-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:10:22-77
-15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:11:5-81
-15-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:11:22-78
-16
-17    <application
-17-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:13:5-60:19
-18        android:allowBackup="true"
-18-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:14:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/f01b27bb220ecb79298884ef36a7a2fb/core-1.1.0/AndroidManifest.xml:24:18-86
-20        android:debuggable="true"
-21        android:fullBackupContent="@xml/backup_descriptor"
-21-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:15:9-59
-22        android:icon="@mipmap/simple_stocks_logo"
-22-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:16:9-50
-23        android:label="@string/app_name"
-23-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:17:9-41
-24        android:supportsRtl="true"
-24-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:18:9-35
-25        android:testOnly="true"
-26        android:theme="@style/AppTheme" >
-26-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:19:9-40
-27        <activity
-27-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:21:9-23:72
-28            android:name="com.cs360.simplestocks.activities.HomepageActivity"
-28-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:22:13-78
-29            android:label="@string/title_activity_homepage" />
-29-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:23:13-60
-30        <activity
-30-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:24:9-26:63
-31            android:name="com.cs360.simplestocks.activities.SettingsActivity"
-31-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:25:13-78
-32            android:label="@string/title_activity_settings" />
-32-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:26:13-60
-33        <activity android:name="com.cs360.simplestocks.activities.SplashActivity" >
-33-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:27:9-33:20
-33-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:27:19-82
-34            <intent-filter>
-34-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:28:13-32:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:17-69
-35-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:31:17-77
-37-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:31:27-74
-38            </intent-filter>
-39        </activity>
-40        <activity
-40-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:34:9-36:52
-41            android:name="com.cs360.simplestocks.activities.LoginActivity"
-41-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:35:13-75
-42            android:screenOrientation="portrait" />
-42-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:36:13-49
-43        <activity
-43-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:37:9-39:52
-44            android:name="com.cs360.simplestocks.activities.RegisterActivity"
-44-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:38:13-78
-45            android:screenOrientation="portrait" />
-45-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:39:13-49
-46        <activity
-46-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:40:9-42:52
-47            android:name="com.cs360.simplestocks.activities.UsersListActivity"
-47-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:41:13-79
-48            android:screenOrientation="portrait" />
-48-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:42:13-49
-49        <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity" >
-49-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:43:9-55:20
-49-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:43:19-85
-50            <intent-filter>
-50-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:44:13-54:29
-51                <action android:name="android.intent.action.ContactUseActivity" />
-51-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:45:17-83
-51-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:45:25-80
-52
-53                <category android:name="android.intent.category.LAUNCHER" />
-53-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:31:17-77
-53-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:31:27-74
-54
-55                <action android:name="android.intent.action.SEND" />
-55-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:49:17-69
-55-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:49:25-66
-56
-57                <category android:name="android.intent.category.DEFAULT" />
-57-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:51:17-76
-57-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:51:27-73
-58
-59                <data android:mimeType="message/rfc822" />
-59-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:53:17-59
-59-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:53:23-56
-60            </intent-filter>
-61        </activity>
-62
-63        <meta-data
-63-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:57:9-59:57
-64            android:name="preloaded_fonts"
-64-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:58:13-43
-65            android:resource="@array/preloaded_fonts" />
-65-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:59:13-54
-66
-67        <provider
-67-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/55580b0ab45b69249933074462ab11c2/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
-68            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-68-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/55580b0ab45b69249933074462ab11c2/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
-69            android:authorities="com.cs360.simplestocks.lifecycle-process"
-69-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/55580b0ab45b69249933074462ab11c2/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
-70            android:exported="false"
-70-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/55580b0ab45b69249933074462ab11c2/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
-71            android:multiprocess="true" />
-71-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/55580b0ab45b69249933074462ab11c2/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
-72    </application>
+10    <!-- Declaring the required permissions -->
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:6:5-67
+11-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:7:5-79
+12-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:8:5-80
+13-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:8:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:9:5-81
+14-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:9:22-78
+15
+16    <application
+16-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:11:5-59:19
+17        android:allowBackup="true"
+17-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:12:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/478b79604eaaf934858ce3739dce1708/core-1.1.0/AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:fullBackupContent="@xml/backup_descriptor"
+20-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:13:9-59
+21        android:icon="@mipmap/simple_stocks_logo"
+21-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:14:9-50
+22        android:label="@string/app_name"
+22-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:15:9-41
+23        android:supportsRtl="true"
+23-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:16:9-35
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:17:9-40
+26        <activity
+26-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:19:9-21:63
+27            android:name="com.cs360.simplestocks.activities.HomepageActivity"
+27-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:20:13-78
+28            android:label="@string/title_activity_homepage" />
+28-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:21:13-60
+29        <activity
+29-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:22:9-24:63
+30            android:name="com.cs360.simplestocks.activities.SettingsActivity"
+30-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:23:13-78
+31            android:label="@string/title_activity_settings" />
+31-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:24:13-60
+32        <activity android:name="com.cs360.simplestocks.activities.SplashActivity" >
+32-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:25:9-31:20
+32-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:25:19-82
+33            <intent-filter>
+33-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:26:13-30:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:27:17-69
+34-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:27:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:17-77
+36-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity
+39-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:32:9-35:50
+40            android:name="com.cs360.simplestocks.activities.LoginActivities.LoginActivity"
+40-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:33:13-91
+41            android:screenOrientation="portrait" />
+41-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:34:13-49
+42        <activity
+42-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:36:9-38:52
+43            android:name="com.cs360.simplestocks.activities.RegisterActivity"
+43-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:37:13-78
+44            android:screenOrientation="portrait" />
+44-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:38:13-49
+45        <activity
+45-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:39:9-41:52
+46            android:name="com.cs360.simplestocks.activities.UsersListActivity"
+46-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:40:13-79
+47            android:screenOrientation="portrait" />
+47-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:41:13-49
+48        <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity" >
+48-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:42:9-54:20
+48-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:42:19-85
+49            <intent-filter>
+49-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:43:13-53:29
+50                <action android:name="android.intent.action.ContactUseActivity" />
+50-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:44:17-83
+50-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:44:25-80
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:17-77
+52-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:27-74
+53
+54                <action android:name="android.intent.action.SEND" />
+54-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:48:17-69
+54-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:48:25-66
+55
+56                <category android:name="android.intent.category.DEFAULT" />
+56-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:50:17-76
+56-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:50:27-73
+57
+58                <data android:mimeType="message/rfc822" />
+58-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:52:17-59
+58-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:52:23-56
+59            </intent-filter>
+60        </activity>
+61
+62        <meta-data
+62-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:56:9-58:57
+63            android:name="preloaded_fonts"
+63-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:57:13-43
+64            android:resource="@array/preloaded_fonts" />
+64-->/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:58:13-54
+65
+66        <activity
+66-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:24:9-31:50
+67            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+67-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:25:13-85
+68            android:excludeFromRecents="true"
+68-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:26:13-46
+69            android:exported="true"
+69-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:27:13-36
+70            android:launchMode="singleTask"
+70-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:28:13-44
+71            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+71-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:29:13-102
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+72-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:30:13-72
 73
-74</manifest>
+74        <service
+74-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:33:9-39:19
+75            android:name="com.google.firebase.components.ComponentDiscoveryService"
+75-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:34:13-84
+76            android:directBootAware="true"
+76-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+77            android:exported="false" >
+77-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:35:13-37
+78            <meta-data
+78-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:36:13-38:85
+79                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+79-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:37:17-109
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:38:17-82
+81        </service>
+82
+83        <activity
+83-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
+84            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+84-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
+85            android:excludeFromRecents="true"
+85-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
+86            android:exported="false"
+86-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
+87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+87-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
+88        <!--
+89            Service handling Google Sign-In user revocation. For apps that do not integrate with
+90            Google Sign-In, this service will never be started.
+91        -->
+92        <service
+92-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
+93            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+93-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
+94            android:exported="true"
+94-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
+95            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+95-->[com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
+96
+97        <provider
+97-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+98            android:name="com.google.firebase.provider.FirebaseInitProvider"
+98-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+99            android:authorities="com.cs360.simplestocks.firebaseinitprovider"
+99-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+100            android:exported="false"
+100-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+101            android:initOrder="100" />
+101-->[com.google.firebase:firebase-common:19.3.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/0b3f6edabb0c9987ce53bc6062be8113/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+102
+103        <activity
+103-->[com.google.android.gms:play-services-base:17.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/5361484794665ae726e7094cda0f326e/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+104            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+104-->[com.google.android.gms:play-services-base:17.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/5361484794665ae726e7094cda0f326e/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+105            android:exported="false"
+105-->[com.google.android.gms:play-services-base:17.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/5361484794665ae726e7094cda0f326e/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+106            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+106-->[com.google.android.gms:play-services-base:17.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/5361484794665ae726e7094cda0f326e/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+107
+108        <meta-data
+108-->[com.google.android.gms:play-services-basement:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a2b3f553171a8a2ffd3d06f07b932b94/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+109            android:name="com.google.android.gms.version"
+109-->[com.google.android.gms:play-services-basement:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a2b3f553171a8a2ffd3d06f07b932b94/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+110            android:value="@integer/google_play_services_version" />
+110-->[com.google.android.gms:play-services-basement:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/a2b3f553171a8a2ffd3d06f07b932b94/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+111
+112        <provider
+112-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/30585dfb4796ccf6c9f3a08fe0973e85/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+113            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+113-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/30585dfb4796ccf6c9f3a08fe0973e85/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+114            android:authorities="com.cs360.simplestocks.lifecycle-process"
+114-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/30585dfb4796ccf6c9f3a08fe0973e85/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+115            android:exported="false"
+115-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/30585dfb4796ccf6c9f3a08fe0973e85/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+116            android:multiprocess="true" />
+116-->[androidx.lifecycle:lifecycle-process:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/30585dfb4796ccf6c9f3a08fe0973e85/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+117    </application>
+118
+119</manifest>

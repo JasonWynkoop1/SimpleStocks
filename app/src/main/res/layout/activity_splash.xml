@@ -16,13 +16,12 @@
             android:id="@+id/splash_screen_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
             android:paddingTop="250sp"
             android:text="@string/simple_stocks"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/colorSimpleStocksTitle"
-            android:textSize="50sp"
+            android:textSize="45sp"
             android:textStyle="bold" />
 
         <TextView

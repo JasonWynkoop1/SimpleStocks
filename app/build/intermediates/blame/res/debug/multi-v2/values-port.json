@@ -4,7 +4,7 @@
             "outputFile": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/d74b5b498b35fd5cb32d0a6997bb1d3d/appcompat-1.1.0/res/values-port/values-port.xml",
+                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/8b7353a4da394401f2770946eabec9bd/appcompat-1.1.0/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
