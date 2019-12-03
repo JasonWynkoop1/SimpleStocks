@@ -762,7 +762,7 @@ public final class R {
         public static final int search_src_text = 0x7f0a0101;
         public static final int search_voice_btn = 0x7f0a0102;
         public static final int select_dialog_listview = 0x7f0a0105;
-        public static final int shortcut = 0x7f0a0108;
+        public static final int shortcut = 0x7f0a0107;
         public static final int spacer = 0x7f0a0113;
         public static final int split_action_bar = 0x7f0a0118;
         public static final int src_atop = 0x7f0a011b;
@@ -783,15 +783,15 @@ public final class R {
         public static final int text2 = 0x7f0a0130;
         public static final int textSpacerNoButtons = 0x7f0a0138;
         public static final int textSpacerNoTitle = 0x7f0a0139;
-        public static final int time = 0x7f0a0149;
-        public static final int title = 0x7f0a014a;
-        public static final int titleDividerNoCustom = 0x7f0a014b;
-        public static final int title_template = 0x7f0a014d;
-        public static final int topPanel = 0x7f0a014f;
-        public static final int unchecked = 0x7f0a0156;
-        public static final int uniform = 0x7f0a0157;
-        public static final int up = 0x7f0a0159;
-        public static final int wrap_content = 0x7f0a0160;
+        public static final int time = 0x7f0a0148;
+        public static final int title = 0x7f0a0149;
+        public static final int titleDividerNoCustom = 0x7f0a014a;
+        public static final int title_template = 0x7f0a014c;
+        public static final int topPanel = 0x7f0a014e;
+        public static final int unchecked = 0x7f0a0155;
+        public static final int uniform = 0x7f0a0156;
+        public static final int up = 0x7f0a0158;
+        public static final int wrap_content = 0x7f0a015f;
     }
     public static final class integer {
         private integer() {}
@@ -854,7 +854,7 @@ public final class R {
         public static final int select_dialog_item_material = 0x7f0d006b;
         public static final int select_dialog_multichoice_material = 0x7f0d006c;
         public static final int select_dialog_singlechoice_material = 0x7f0d006d;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0d006f;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0d006e;
     }
     public static final class string {
         private string() {}

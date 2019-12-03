@@ -1598,7 +1598,7 @@ public final class R {
         public static final int search_voice_btn = 0x7f0a0102;
         public static final int select_dialog_listview = 0x7f0a0105;
         public static final int selected = 0x7f0a0106;
-        public static final int shortcut = 0x7f0a0108;
+        public static final int shortcut = 0x7f0a0107;
         public static final int slide = 0x7f0a010d;
         public static final int smallLabel = 0x7f0a010e;
         public static final int snackbar_action = 0x7f0a010f;
@@ -1629,30 +1629,30 @@ public final class R {
         public static final int textSpacerNoTitle = 0x7f0a0139;
         public static final int text_input_end_icon = 0x7f0a0140;
         public static final int text_input_start_icon = 0x7f0a0141;
-        public static final int textinput_counter = 0x7f0a0144;
-        public static final int textinput_error = 0x7f0a0145;
-        public static final int textinput_helper_text = 0x7f0a0146;
-        public static final int textinput_prefix_text = 0x7f0a0147;
-        public static final int textinput_suffix_text = 0x7f0a0148;
-        public static final int time = 0x7f0a0149;
-        public static final int title = 0x7f0a014a;
-        public static final int titleDividerNoCustom = 0x7f0a014b;
-        public static final int title_template = 0x7f0a014d;
-        public static final int top = 0x7f0a014e;
-        public static final int topPanel = 0x7f0a014f;
-        public static final int touch_outside = 0x7f0a0150;
-        public static final int transition_current_scene = 0x7f0a0151;
-        public static final int transition_layout_save = 0x7f0a0152;
-        public static final int transition_position = 0x7f0a0153;
-        public static final int transition_scene_layoutid_cache = 0x7f0a0154;
-        public static final int transition_transform = 0x7f0a0155;
-        public static final int unchecked = 0x7f0a0156;
-        public static final int uniform = 0x7f0a0157;
-        public static final int unlabeled = 0x7f0a0158;
-        public static final int up = 0x7f0a0159;
-        public static final int view_offset_helper = 0x7f0a015b;
-        public static final int visible = 0x7f0a015c;
-        public static final int wrap_content = 0x7f0a0160;
+        public static final int textinput_counter = 0x7f0a0143;
+        public static final int textinput_error = 0x7f0a0144;
+        public static final int textinput_helper_text = 0x7f0a0145;
+        public static final int textinput_prefix_text = 0x7f0a0146;
+        public static final int textinput_suffix_text = 0x7f0a0147;
+        public static final int time = 0x7f0a0148;
+        public static final int title = 0x7f0a0149;
+        public static final int titleDividerNoCustom = 0x7f0a014a;
+        public static final int title_template = 0x7f0a014c;
+        public static final int top = 0x7f0a014d;
+        public static final int topPanel = 0x7f0a014e;
+        public static final int touch_outside = 0x7f0a014f;
+        public static final int transition_current_scene = 0x7f0a0150;
+        public static final int transition_layout_save = 0x7f0a0151;
+        public static final int transition_position = 0x7f0a0152;
+        public static final int transition_scene_layoutid_cache = 0x7f0a0153;
+        public static final int transition_transform = 0x7f0a0154;
+        public static final int unchecked = 0x7f0a0155;
+        public static final int uniform = 0x7f0a0156;
+        public static final int unlabeled = 0x7f0a0157;
+        public static final int up = 0x7f0a0158;
+        public static final int view_offset_helper = 0x7f0a015a;
+        public static final int visible = 0x7f0a015b;
+        public static final int wrap_content = 0x7f0a015f;
     }
     public static final class integer {
         private integer() {}
@@ -1778,19 +1778,19 @@ public final class R {
         public static final int select_dialog_item_material = 0x7f0d006b;
         public static final int select_dialog_multichoice_material = 0x7f0d006c;
         public static final int select_dialog_singlechoice_material = 0x7f0d006d;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0d006f;
-        public static final int test_action_chip = 0x7f0d0070;
-        public static final int test_design_checkbox = 0x7f0d0071;
-        public static final int test_reflow_chipgroup = 0x7f0d0072;
-        public static final int test_toolbar = 0x7f0d0073;
-        public static final int test_toolbar_custom_background = 0x7f0d0074;
-        public static final int test_toolbar_elevation = 0x7f0d0075;
-        public static final int test_toolbar_surface = 0x7f0d0076;
-        public static final int text_view_with_line_height_from_appearance = 0x7f0d0077;
-        public static final int text_view_with_line_height_from_layout = 0x7f0d0078;
-        public static final int text_view_with_line_height_from_style = 0x7f0d0079;
-        public static final int text_view_with_theme_line_height = 0x7f0d007a;
-        public static final int text_view_without_line_height = 0x7f0d007b;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0d006e;
+        public static final int test_action_chip = 0x7f0d006f;
+        public static final int test_design_checkbox = 0x7f0d0070;
+        public static final int test_reflow_chipgroup = 0x7f0d0071;
+        public static final int test_toolbar = 0x7f0d0072;
+        public static final int test_toolbar_custom_background = 0x7f0d0073;
+        public static final int test_toolbar_elevation = 0x7f0d0074;
+        public static final int test_toolbar_surface = 0x7f0d0075;
+        public static final int text_view_with_line_height_from_appearance = 0x7f0d0076;
+        public static final int text_view_with_line_height_from_layout = 0x7f0d0077;
+        public static final int text_view_with_line_height_from_style = 0x7f0d0078;
+        public static final int text_view_with_theme_line_height = 0x7f0d0079;
+        public static final int text_view_without_line_height = 0x7f0d007a;
     }
     public static final class plurals {
         private plurals() {}

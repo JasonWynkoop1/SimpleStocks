@@ -153,7 +153,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.appCompatButtonLogin:
-                verifyInput();
+                signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
+                //verifyInput();
                 break;
             case R.id.TEXT_VIEW_LINK_REGISTER:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);

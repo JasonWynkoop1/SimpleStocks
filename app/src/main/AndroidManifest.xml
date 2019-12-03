@@ -19,9 +19,6 @@
         <activity
             android:name="com.cs360.simplestocks.activities.HomepageActivity"
             android:label="@string/title_activity_homepage" />
-        <activity
-            android:name="com.cs360.simplestocks.activities.SettingsActivity"
-            android:label="@string/title_activity_settings" />
         <activity android:name="com.cs360.simplestocks.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

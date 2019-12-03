@@ -104,7 +104,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
                 null,
                 sortOrder
         );
-
+        /*
         if(cursor.moveToFirst()){
             do{
                 User user = new User();
@@ -115,7 +115,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
                 //adding user record to list
                 userList.add(user);
             }while(cursor.moveToNext());
-        }
+        }*/
         cursor.close();
         db.close();
 

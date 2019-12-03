@@ -113,7 +113,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private void initializeObjects() {
         inputValidation = new InputValidation(activity);
         userDatabaseHelper = new UserDatabaseHelper(activity);
-        user = new User();
+        //user = new User();
 
     }
 
