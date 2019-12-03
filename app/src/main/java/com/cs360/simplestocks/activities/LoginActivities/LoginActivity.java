@@ -85,9 +85,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         System.out.println("START START START");
 
         //check if user is signed it (non null) and update UI accordingly
-        FirebaseUser currentUser;
-        if (mAuth.getCurrentUser() != null) {
-            currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
             Log.i(TAG, "onStart: " + currentUser);
             //mAuth.addAuthStateListener(authStateListener);
         } else {
@@ -113,6 +112,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
 
     }
+
 
     /**
      * This function is called when the user accepts or decline the permission.

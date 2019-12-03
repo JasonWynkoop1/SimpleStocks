@@ -170,6 +170,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         Log.i(TAG, "email: " + textInputEditTextEmail.getText().toString().trim());
         createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
 
+
         /*if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
 
             user.setName(Objects.requireNonNull(textInputEditTextName.getText()).toString().trim());
