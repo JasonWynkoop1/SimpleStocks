@@ -13,6 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
@@ -117,6 +118,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     }
 
+    /**
+     * Create an account using the entered email and password.
+     * Also saves the name as the display name in the firebase database
+     *
+     * @param email
+     * @param password
+     */
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
 
@@ -129,6 +137,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
+                        updateProfile(user);
                         //updateUI(user);
                     } else {
                         // If sign in fails, display a message to the user.
@@ -167,9 +176,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             return;
         }
 
-        Log.i(TAG, "email: " + textInputEditTextEmail.getText().toString().trim());
         createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
-
 
         /*if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
 
@@ -192,6 +199,25 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             // Snack Bar to show error message that record already exists
             Snackbar.make(mNestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
         }*/
+    }
+
+    public void updateProfile(FirebaseUser user) {
+        // [START update_profile]
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(textInputEditTextName.getText().toString())
+                .build();
+
+        FirebaseUser finalUser = user;
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "User profile updated.");
+                        Log.i(TAG, "DISPLAY NAME: " + finalUser.getDisplayName());
+                    }
+                });
+        // [END update_profile]
     }
 
     /**

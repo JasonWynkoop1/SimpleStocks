@@ -58,8 +58,7 @@
     <string name="sign_in">sign in</string>
     <string name="welcome_login_title">Welcome</string>
     <string name="loading">Loading...</string>
-    <string name="emailpassword_title_text">Email and Password Login</string>
-    <string name="sign_out">sign out</string>
+    <string name="sign_out">Sign Out</string>
     <string name="verify_email">verify email</string>
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>

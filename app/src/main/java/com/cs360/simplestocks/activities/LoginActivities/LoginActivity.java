@@ -80,6 +80,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     }
 
+    /**
+     * Check if the user has checked the stay logged in button or not.
+     * If true, load homepage
+     * Else, load login
+     */
     public void onStart() {
         super.onStart();
         System.out.println("START START START");
