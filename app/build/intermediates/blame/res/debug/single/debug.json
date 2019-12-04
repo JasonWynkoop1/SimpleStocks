@@ -1356,12 +1356,12 @@
         "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/8b7353a4da394401f2770946eabec9bd/appcompat-1.1.0/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
-        "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/8b7353a4da394401f2770946eabec9bd/appcompat-1.1.0/res/layout/abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/res/merged/debug/font_sintony_bold.xml.flat",
         "source": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/res/font/sintony_bold.xml"
+    },
+    {
+        "merged": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
+        "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/8b7353a4da394401f2770946eabec9bd/appcompat-1.1.0/res/layout/abc_list_menu_item_layout.xml"
     },
     {
         "merged": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/res/merged/debug/drawable_ic_dashboard_black_24dp.xml.flat",
