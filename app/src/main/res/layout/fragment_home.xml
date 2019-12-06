@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <TextView
@@ -13,17 +14,71 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorSimpleStocksTitle"
+        android:textColorHighlight="@color/colorSimpleStocksTitle"
+        android:textColorHint="@color/colorSimpleStocksTitle"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/title_home" />
 
-    <com.github.mikephil.charting.charts.CandleStickChart
-        android:id="@+id/candle_stick_chart"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/button_horizontal_margin"
+                android:text="@string/your_stocks" />
+
+            <ListView
+                android:id="@+id/yourStocksListView"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_margin="@dimen/button_horizontal_margin" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/button_horizontal_margin"
+                android:text="@string/top_stocks"
+                tools:text="@string/top_stocks" />
+
+            <ListView
+                android:id="@+id/topStocksListView"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_margin="@dimen/button_horizontal_margin">
+
+            </ListView>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/button_horizontal_margin"
+                android:text="@string/watchlist"
+                tools:text="@string/watchlist" />
+
+            <ListView
+                android:id="@+id/watchlistListview"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:layout_margin="@dimen/button_horizontal_margin">
+
+            </ListView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

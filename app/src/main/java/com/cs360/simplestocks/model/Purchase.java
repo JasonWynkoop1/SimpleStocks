@@ -1,6 +1,6 @@
 package com.cs360.simplestocks.model;
 
-import java.util.Date;
+import java.util.*;
 
 public class Purchase {
     private Stock stock;

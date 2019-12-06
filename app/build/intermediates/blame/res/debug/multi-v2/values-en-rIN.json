@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "C:\\Users\\Extra\\AndroidStudioProjects\\SimpleStocks\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
             "map": [
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/478b79604eaaf934858ce3739dce1708/core-1.1.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "C:\\Users\\Extra\\.gradle\\caches\\transforms-2\\files-2.1\\68c5e4c791023e717c1a01302e79b7a7\\preference-1.1.0\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,173,260,333,467,636,716",
+                        "endColumns": "67,86,72,133,168,79,75",
+                        "endOffsets": "168,255,328,462,631,711,787"
+                    },
+                    "to": {
+                        "startLines": "29,30,33,34,37,38,39",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "2762,2830,3140,3213,3530,3699,3779",
+                        "endColumns": "67,86,72,133,168,79,75",
+                        "endOffsets": "2825,2912,3208,3342,3694,3774,3850"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Extra\\.gradle\\caches\\transforms-2\\files-2.1\\478b79604eaaf934858ce3739dce1708\\core-1.1.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/ea5ec4955f31616617d06d58f6912d84/jetified-navigation-ui-2.1.0/res/values-en-rIN/values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,116",
-                        "endOffsets": "156,273"
-                    },
-                    "to": {
-                        "startLines": "31,32",
-                        "startColumns": "4,4",
-                        "startOffsets": "2917,3023",
-                        "endColumns": "105,116",
-                        "endOffsets": "3018,3135"
-                    }
-                },
-                {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/8b7353a4da394401f2770946eabec9bd/appcompat-1.1.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "C:\\Users\\Extra\\.gradle\\caches\\transforms-2\\files-2.1\\8b7353a4da394401f2770946eabec9bd\\appcompat-1.1.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,20 +55,20 @@
                     }
                 },
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/68c5e4c791023e717c1a01302e79b7a7/preference-1.1.0/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "C:\\Users\\Extra\\.gradle\\caches\\transforms-2\\files-2.1\\732bab54b3e046447b2874f14d018857\\jetified-navigation-ui-2.1.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,173,260,333,467,636,716",
-                        "endColumns": "67,86,72,133,168,79,75",
-                        "endOffsets": "168,255,328,462,631,711,787"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,116",
+                        "endOffsets": "156,273"
                     },
                     "to": {
-                        "startLines": "29,30,33,34,37,38,39",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "2762,2830,3140,3213,3530,3699,3779",
-                        "endColumns": "67,86,72,133,168,79,75",
-                        "endOffsets": "2825,2912,3208,3342,3694,3774,3850"
+                        "startLines": "31,32",
+                        "startColumns": "4,4",
+                        "startOffsets": "2917,3023",
+                        "endColumns": "105,116",
+                        "endOffsets": "3018,3135"
                     }
                 }
             ]

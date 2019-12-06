@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.cs360.simplestocks.model.CreditCard;
 import com.cs360.simplestocks.model.User;
+import com.cs360.simplestocks.model.Purchase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -216,6 +218,92 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return cursorCount > 0;
+    }
+
+    /**
+     * Adds the purchase to the PURCHASES table with the user's email as an identifier
+     * @param userID - the user who made the purchase.
+     * @param purchase - the purchase to add to the table
+     */
+    public void addPurchase(int userID, Purchase purchase){
+        //TODO: check to see if the user has purchased this stock first.
+        //TODO: add the purchase to the purchase table with the user's email.
+    }
+
+    /**
+     * New credit card creation
+     * @param creditCard - new credit card for table
+     */
+    public void addCreditCard(CreditCard creditCard){
+        //TODO: Add credit card to TABLE_CREDIT_CARD
+        //TODO: Add credit card number to USER
+    }
+
+    /**
+     * Add stocks to purchase when user buys more of stock they already own.
+     * @param userID - the user making the purchase.
+     * @param stockSymbol - the symbol of the stock being bought.
+     * @param stocksAdded - the number of stocks that were bought.
+     */
+    public void addStocksToPurchase(int userID, String stockSymbol, int stocksAdded){
+        /*TODO: update the number of stocks the user owns of the type stockSymbol when
+                they buy more.
+         */
+    }
+
+    /**
+     * remove stocks from purchase when user sells some of they're stocks.
+     * @param userID - user selling the stocks
+     * @param stockSymbol - symbol of the stock(s) being sold
+     * @param stocksRemoved - the number of stocks being sold
+     */
+    public void removeStocksFromPurchase(int userID, String stockSymbol, int stocksRemoved){
+        /*TODO: update number of stocks the user owns of the type stockSymbol when
+                when they sell a number of them. (
+                -!Make sure they have enough to sell the
+                amount they're trying to sell!).
+                -Delete stock if the quantity becomes 0.
+         */
+    }
+
+    /**
+     * Delete a purchase from the purchase table based on user ID and stock symbol.
+     * @param userID - the ID of the user
+     * @param stockSymbol - the symbol of the stocks being deleted.
+     */
+    public void deletePurchase(int userID, String stockSymbol){
+        /*TODO: delete the purchase from the purchases table based on the user id and
+                stockSymbol.
+         */
+    }
+
+    /**
+     * Check if the user already owns some of the same stocks they are purchasing.
+     * @param stockSymbol - the symbol of the stock being purchased.
+     * @param userID - the user purchasing the stock.
+     * @return - true if the user has bought stock, false if the user hasn't.
+     */
+    public boolean userHasBoughtStock(int userID,String stockSymbol){
+        /*TODO: check if user has any stock in the stock they are purchasing.
+                If they have, return true.
+                If they have not, return false;
+         */
+
+        /*placeholder*/ return true;
+    }
+
+    /**
+     * Check if the credit card already exists in the credit card table based on the CCN.
+     * @param creditCardNumber - the number of the credit card.
+     * @return - true if the credit card number exists in the table, false if not.
+     */
+    public boolean creditCardExists(String creditCardNumber){
+        /*TODO: check if credit card exists in credit card table using credit card number.
+                If it does exist, return true.
+                If it does not exist, return false.
+         */
+
+        /*placeholder*/ return true;
     }
 
 }

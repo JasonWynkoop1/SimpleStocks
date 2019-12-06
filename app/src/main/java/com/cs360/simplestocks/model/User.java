@@ -3,19 +3,21 @@ package com.cs360.simplestocks.model;
 import java.util.ArrayList;
 
 public class User {
-
     private int id;
     private String name;
     private String email;
     private String password;
     private ArrayList<Purchase> portfolio;
+    private CreditCard creditCard;
 
-    public User(int id, String name, String email, String password, ArrayList<Purchase> portfolio) {
+    public User(int id, String name, String email, String password,
+                ArrayList<Purchase> portfolio, CreditCard creditCard) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.portfolio = portfolio;
+        this.creditCard = creditCard;
     }
 
     public int getId(){
@@ -64,5 +66,13 @@ public class User {
 
     public void setPortfolio(ArrayList<Purchase> portfolio) {
         this.portfolio = portfolio;
+    }
+
+    public CreditCard getCreditCard() {
+        return creditCard;
+    }
+
+    public void setCreditCard(CreditCard creditCard) {
+        this.creditCard = creditCard;
     }
 }

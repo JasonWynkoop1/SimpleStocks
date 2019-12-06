@@ -29,6 +29,9 @@
     <string name="hint_message">Message</string>
     <string name="Button_Send_Message">Send</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="your_stocks">Your Stocks</string>
+    <string name="top_stocks">Your Top Stocks</string>
+    <string name="watchlist">Watchlist</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

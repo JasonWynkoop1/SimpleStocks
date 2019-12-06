@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Jason/AndroidStudioProjects/SimpleStocks/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "outputFile": "C:\\Users\\Extra\\AndroidStudioProjects\\SimpleStocks\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/Jason/.gradle/caches/transforms-2/files-2.1/68c5e4c791023e717c1a01302e79b7a7/preference-1.1.0/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Extra\\.gradle\\caches\\transforms-2\\files-2.1\\68c5e4c791023e717c1a01302e79b7a7\\preference-1.1.0\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

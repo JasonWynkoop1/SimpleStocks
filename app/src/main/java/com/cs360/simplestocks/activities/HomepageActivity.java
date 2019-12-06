@@ -28,4 +28,5 @@ public class HomepageActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+
 }
