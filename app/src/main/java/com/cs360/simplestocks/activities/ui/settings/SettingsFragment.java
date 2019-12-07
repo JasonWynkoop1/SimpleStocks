@@ -32,6 +32,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    /**
+     * When sign out is clicked call this method
+     *
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             case sign_out_button:

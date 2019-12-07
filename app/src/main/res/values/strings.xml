@@ -39,10 +39,6 @@
     <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="contact_us_text">Contact Us</string>
     <string name="keep_me_logged_in">Keep me logged in</string>
@@ -57,10 +53,10 @@
     <string name="signed_out">signed out</string>
     <string name="sign_in">sign in</string>
     <string name="welcome_login_title">Welcome</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="sign_out">Sign Out</string>
     <string name="verify_email">verify email</string>
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>
-    <string name="auth_failed">Authentication failed</string>
+    <string name="auth_failed">There was a problem with your info…</string>
 </resources>

@@ -7,13 +7,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.cs360.simplestocks.helpers.InputValidation;
-import com.cs360.simplestocks.model.User;
-import com.cs360.simplestocks.sql.UserDatabaseHelper;
+import com.cs360.simplestocks.helpers.UpdateUser;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.simplestocks.loginregister.R;
 
 import java.util.Objects;
@@ -22,13 +20,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.widget.NestedScrollView;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "Register";
     private final AppCompatActivity activity = RegisterActivity.this;
-    private NestedScrollView mNestedScrollView;
 
     private TextInputLayout mTextInputLayout;
     private TextInputLayout mTextInputLayoutEmail;
@@ -44,8 +40,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private AppCompatTextView appCompatTextViewLoginLink;
 
     private InputValidation inputValidation;
-    private UserDatabaseHelper userDatabaseHelper;
-    private User user;
+    private UpdateUser updateUser;
 
     private FirebaseAuth mAuth;
 
@@ -69,6 +64,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
             case R.id.APP_COMPAT_BUTTON_REGISTER:
                 writeDataToDatabase();
+                createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
                 break;
 
             case R.id.APP_COMPAT_TEXT_VIEW_LOGIN_LINK:
@@ -81,7 +77,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
      * This method is to initialize views
      */
     private void initializeViews() {
-        mNestedScrollView = findViewById(R.id.NESTED_SCROLL_VIEW);
 
         mTextInputLayout = findViewById(R.id.TEXT_INPUT_LAYOUT_NAME);
         mTextInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
@@ -113,9 +108,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
      */
     private void initializeObjects() {
         inputValidation = new InputValidation(activity);
-        userDatabaseHelper = new UserDatabaseHelper(activity);
-        //user = new User();
-
+        updateUser = new UpdateUser();
     }
 
     /**
@@ -129,29 +122,24 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         Log.d(TAG, "createAccount:" + email);
 
         showProgressDialog();
-
-        // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        updateProfile(user);
-                        //updateUI(user);
+                        updateUser.sendEmailVerification(user);
+                        updateUser.updateProfile(user);
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                        Toast.makeText(RegisterActivity.this, "" + task.getException().getMessage(),
                                 Toast.LENGTH_SHORT).show();
-                        //updateUI(null);
+                        emptyInputEditText();
                     }
 
-                    // [START_EXCLUDE]
                     hideProgressDialog();
-                    // [END_EXCLUDE]
                 });
-        // [END create_user_with_email]
     }
 
 
@@ -176,55 +164,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             return;
         }
 
-        createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
-
-        /*if (!userDatabaseHelper.checkIfUserExists(Objects.requireNonNull(textInputEditTextEmail.getText()).toString().trim())) {
-
-            user.setName(Objects.requireNonNull(textInputEditTextName.getText()).toString().trim());
-            user.setEmail(textInputEditTextEmail.getText().toString().trim());
-            user.setPassword(Objects.requireNonNull(textInputEditTextPassword.getText()).toString().trim());
-
-            userDatabaseHelper.addUser(user);
-
-            // Snack Bar to show success message that record saved successfully
-            Snackbar.make(mNestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG).show();
-            emptyInputEditText();
-
-
-            //Send the user back to login with new account
-            Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(loginActivity);
-
-        } else {
-            // Snack Bar to show error message that record already exists
-            Snackbar.make(mNestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
-        }*/
-    }
-
-    public void updateProfile(FirebaseUser user) {
-        // [START update_profile]
-        user = FirebaseAuth.getInstance().getCurrentUser();
-
-        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                .setDisplayName(textInputEditTextName.getText().toString())
-                .build();
-
-        FirebaseUser finalUser = user;
-        user.updateProfile(profileUpdates)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "User profile updated.");
-                        Log.i(TAG, "DISPLAY NAME: " + finalUser.getDisplayName());
-                    }
-                });
-        // [END update_profile]
     }
 
     /**
      * This method is to empty all input edit text
      */
     private void emptyInputEditText(){
-        textInputEditTextName.setText(null);
+        //textInputEditTextName.setText(null);
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
         textInputEditTextConfirmPassword.setText(null);

@@ -15,7 +15,6 @@ import com.cs360.simplestocks.activities.HomepageActivity;
 import com.cs360.simplestocks.activities.RegisterActivity;
 import com.cs360.simplestocks.activities.UsersListActivity;
 import com.cs360.simplestocks.helpers.InputValidation;
-import com.cs360.simplestocks.utilities.CheckInternetConnection;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,14 +63,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         setContentView(R.layout.activity_login);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        if (CheckInternetConnection.chekcingNetworkConnection(getApplicationContext())) {
+        /*if (CheckInternetConnection.chekcingNetworkConnection(getApplicationContext())) {
 
             Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
 
         } else {
 
             Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
         initializeViews();
         initializeListeners();
@@ -87,12 +86,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      */
     public void onStart() {
         super.onStart();
-        System.out.println("START START START");
-
         //check if user is signed it (non null) and update UI accordingly
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
-            Log.i(TAG, "onStart: " + currentUser);
+            Log.i(TAG, "onStart: Current user ----->" + currentUser.getDisplayName());
             //mAuth.addAuthStateListener(authStateListener);
         } else {
             Log.i(TAG, "onStart: user is not currently logged in");
@@ -158,8 +155,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.appCompatButtonLogin:
-                signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
-                //verifyInput();
+                verifyInput();
                 break;
             case R.id.TEXT_VIEW_LINK_REGISTER:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
@@ -244,13 +240,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
+                        mStatusTextView.setText(R.string.auth_failed);
+
                         //updateUI(null);
                     }
 
-                    // [START_EXCLUDE]
-                    if (!task.isSuccessful()) {
-                        mStatusTextView.setText(R.string.auth_failed);
-                    }
                     hideProgressDialog();
                     // [END_EXCLUDE]
                 });

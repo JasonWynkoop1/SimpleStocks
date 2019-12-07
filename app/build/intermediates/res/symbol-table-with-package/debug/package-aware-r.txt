@@ -2134,8 +2134,6 @@ string already_a_member_login
 string app_name
 string appbar_scrolling_view_behavior
 string attachment_summary_off
-string attachment_summary_on
-string attachment_title
 string auth_failed
 string bottom_sheet_behavior
 string character_counter_content_description
@@ -2256,7 +2254,6 @@ string stock_trading_made_simple
 string success_message
 string summary_collapsed_preference_list
 string sync_header
-string sync_title
 string text_accounts
 string text_already_member
 string text_hello

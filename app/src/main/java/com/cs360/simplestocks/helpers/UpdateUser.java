@@ -1,0 +1,71 @@
+package com.cs360.simplestocks.helpers;
+
+import android.util.Log;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+
+
+public class UpdateUser {
+
+    private static final String TAG = "UpdateUser";
+
+    public void updateProfile(FirebaseUser user) {
+        // [START update_profile]
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName("Jane Q. User")
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "User profile updated.");
+                    }
+                });
+        // [END update_profile]
+    }
+
+    public void updateEmail() {
+        // [START update_email]
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.updateEmail("user@example.com")
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "User email address updated.");
+                    }
+                });
+        // [END update_email]
+    }
+
+    public void updatePassword() {
+        // [START update_password]
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String newPassword = "SOME-SECURE-PASSWORD";
+
+        user.updatePassword(newPassword)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "User password updated.");
+                    }
+                });
+        // [END update_password]
+    }
+
+    public void sendEmailVerification(FirebaseUser user) {
+        // [START send_email_verification]
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+        user.sendEmailVerification()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Email sent.");
+                    }
+                });
+        // [END send_email_verification]
+    }
+}
