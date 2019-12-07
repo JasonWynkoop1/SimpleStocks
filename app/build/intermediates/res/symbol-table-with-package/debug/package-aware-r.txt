@@ -1639,6 +1639,9 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id account_header_text
+id account_name_header
+id account_name_textView
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1672,6 +1675,7 @@ id beginning
 id blocking
 id bottom
 id button
+id button2
 id buttonPanel
 id cancel_button
 id candle_stick_chart
@@ -1679,6 +1683,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id change_name_text_button
 id checkbox
 id checked
 id chip
@@ -1904,7 +1909,6 @@ id textStart
 id textViewEmail
 id textViewName
 id textViewPassword
-id text_account
 id text_home
 id text_input_end_icon
 id text_input_start_icon
