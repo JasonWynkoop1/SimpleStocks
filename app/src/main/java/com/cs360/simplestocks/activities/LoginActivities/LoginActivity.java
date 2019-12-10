@@ -223,7 +223,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         Log.d(TAG, "signIn:" + email);
 
         showProgressDialog();
-
         // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
@@ -232,9 +231,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-
-                        goToHomepageActivity();
-                        //updateUI(user);
+                        if (!user.isEmailVerified()) {
+                            Toast.makeText(LoginActivity.this, "You are not verified yet!  Please check your email for the verification link.",
+                                    Toast.LENGTH_LONG).show();
+                            emptyInputEditText();
+                        } else {
+                            goToHomepageActivity();
+                        }
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.getException());

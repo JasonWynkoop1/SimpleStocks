@@ -1674,7 +1674,6 @@ id bottom
 id button
 id buttonPanel
 id cancel_button
-id candle_stick_chart
 id center
 id center_horizontal
 id center_vertical
@@ -1714,6 +1713,7 @@ id direct
 id disableHome
 id dropdown_menu
 id edit_query
+id email_text_view_account
 id end
 id enterAlways
 id enterAlwaysCollapsed
@@ -1901,11 +1901,12 @@ id textInputLayoutPassword
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id textViewEmail
 id textViewName
 id textViewPassword
-id text_account
-id text_home
+id text_account_fragment_title
 id text_input_end_icon
 id text_input_start_icon
 id text_view_contact_us
@@ -1931,7 +1932,11 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id update_email_text_view
+id update_name_text_view
+id update_password_text_view
 id useLogo
+id user_name_text_view
 id view_offset_helper
 id visible
 id wide
@@ -2129,6 +2134,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string account_information_fragment_title
 string action_settings
 string already_a_member_login
 string app_name
@@ -2136,6 +2142,8 @@ string appbar_scrolling_view_behavior
 string attachment_summary_off
 string auth_failed
 string bottom_sheet_behavior
+string change_email_text_button
+string change_name_account_fragment
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern

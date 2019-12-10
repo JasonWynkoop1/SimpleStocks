@@ -798,17 +798,17 @@ public final class R {
         public static final int blocking = 0x7f0a0053;
         public static final int bottom = 0x7f0a0054;
         public static final int buttonPanel = 0x7f0a0056;
-        public static final int checkbox = 0x7f0a005d;
-        public static final int checked = 0x7f0a005e;
-        public static final int chronometer = 0x7f0a0064;
-        public static final int content = 0x7f0a006b;
-        public static final int contentPanel = 0x7f0a006c;
-        public static final int custom = 0x7f0a006e;
-        public static final int customPanel = 0x7f0a006f;
-        public static final int decor_content_parent = 0x7f0a0073;
-        public static final int default_activity_button = 0x7f0a0074;
-        public static final int dialog_button = 0x7f0a007a;
-        public static final int edit_query = 0x7f0a007f;
+        public static final int checkbox = 0x7f0a005c;
+        public static final int checked = 0x7f0a005d;
+        public static final int chronometer = 0x7f0a0063;
+        public static final int content = 0x7f0a006a;
+        public static final int contentPanel = 0x7f0a006b;
+        public static final int custom = 0x7f0a006d;
+        public static final int customPanel = 0x7f0a006e;
+        public static final int decor_content_parent = 0x7f0a0072;
+        public static final int default_activity_button = 0x7f0a0073;
+        public static final int dialog_button = 0x7f0a0079;
+        public static final int edit_query = 0x7f0a007e;
         public static final int end = 0x7f0a0080;
         public static final int expand_activities_button = 0x7f0a0084;
         public static final int expanded_menu = 0x7f0a0085;
@@ -885,16 +885,16 @@ public final class R {
         public static final int text2 = 0x7f0a0130;
         public static final int textSpacerNoButtons = 0x7f0a0138;
         public static final int textSpacerNoTitle = 0x7f0a0139;
-        public static final int time = 0x7f0a0148;
-        public static final int title = 0x7f0a0149;
-        public static final int titleDividerNoCustom = 0x7f0a014a;
-        public static final int title_template = 0x7f0a014c;
-        public static final int top = 0x7f0a014d;
-        public static final int topPanel = 0x7f0a014e;
-        public static final int unchecked = 0x7f0a0155;
-        public static final int uniform = 0x7f0a0156;
-        public static final int up = 0x7f0a0158;
-        public static final int wrap_content = 0x7f0a015f;
+        public static final int time = 0x7f0a0149;
+        public static final int title = 0x7f0a014a;
+        public static final int titleDividerNoCustom = 0x7f0a014b;
+        public static final int title_template = 0x7f0a014d;
+        public static final int top = 0x7f0a014e;
+        public static final int topPanel = 0x7f0a014f;
+        public static final int unchecked = 0x7f0a0156;
+        public static final int uniform = 0x7f0a0157;
+        public static final int up = 0x7f0a0159;
+        public static final int wrap_content = 0x7f0a0164;
     }
     public static final class integer {
         private integer() {}
@@ -1007,15 +1007,15 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f120019;
         public static final int abc_shareactionprovider_share_with_application = 0x7f12001a;
         public static final int abc_toolbar_collapse_description = 0x7f12001b;
-        public static final int copy = 0x7f12003c;
-        public static final int expand_button_title = 0x7f120049;
-        public static final int not_set = 0x7f120084;
-        public static final int preference_copied = 0x7f12008a;
-        public static final int search_menu_title = 0x7f12008e;
-        public static final int status_bar_notification_info_overflow = 0x7f120094;
-        public static final int summary_collapsed_preference_list = 0x7f120097;
-        public static final int v7_preference_off = 0x7f1200a6;
-        public static final int v7_preference_on = 0x7f1200a7;
+        public static final int copy = 0x7f12003f;
+        public static final int expand_button_title = 0x7f12004c;
+        public static final int not_set = 0x7f120087;
+        public static final int preference_copied = 0x7f12008d;
+        public static final int search_menu_title = 0x7f120091;
+        public static final int status_bar_notification_info_overflow = 0x7f120097;
+        public static final int summary_collapsed_preference_list = 0x7f12009a;
+        public static final int v7_preference_off = 0x7f1200a9;
+        public static final int v7_preference_on = 0x7f1200aa;
     }
     public static final class style {
         private style() {}

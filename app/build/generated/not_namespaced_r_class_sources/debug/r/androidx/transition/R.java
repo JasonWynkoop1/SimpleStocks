@@ -85,7 +85,7 @@ public final class R {
         public static final int actions = 0x7f0a0046;
         public static final int async = 0x7f0a004f;
         public static final int blocking = 0x7f0a0053;
-        public static final int chronometer = 0x7f0a0064;
+        public static final int chronometer = 0x7f0a0063;
         public static final int forever = 0x7f0a008d;
         public static final int ghost_view = 0x7f0a008e;
         public static final int ghost_view_holder = 0x7f0a008f;
@@ -109,13 +109,13 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f0a012c;
         public static final int text = 0x7f0a012f;
         public static final int text2 = 0x7f0a0130;
-        public static final int time = 0x7f0a0148;
-        public static final int title = 0x7f0a0149;
-        public static final int transition_current_scene = 0x7f0a0150;
-        public static final int transition_layout_save = 0x7f0a0151;
-        public static final int transition_position = 0x7f0a0152;
-        public static final int transition_scene_layoutid_cache = 0x7f0a0153;
-        public static final int transition_transform = 0x7f0a0154;
+        public static final int time = 0x7f0a0149;
+        public static final int title = 0x7f0a014a;
+        public static final int transition_current_scene = 0x7f0a0151;
+        public static final int transition_layout_save = 0x7f0a0152;
+        public static final int transition_position = 0x7f0a0153;
+        public static final int transition_scene_layoutid_cache = 0x7f0a0154;
+        public static final int transition_transform = 0x7f0a0155;
     }
     public static final class integer {
         private integer() {}
@@ -135,7 +135,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f120094;
+        public static final int status_bar_notification_info_overflow = 0x7f120097;
     }
     public static final class style {
         private style() {}

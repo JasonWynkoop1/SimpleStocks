@@ -59,4 +59,7 @@
     <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>
     <string name="auth_failed">There was a problem with your info…</string>
+    <string name="account_information_fragment_title">Account Information</string>
+    <string name="change_name_account_fragment">Change</string>
+    <string name="change_email_text_button">Change</string>
 </resources>

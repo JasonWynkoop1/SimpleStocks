@@ -68,4 +68,22 @@ public class UpdateUser {
                 });
         // [END send_email_verification]
     }
+
+    public void updateDisplayName(FirebaseUser user, String name) {
+        // [START send_email_verification]
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name).build();
+
+        user.updateProfile(profileUpdates);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Users name change to: " + name);
+                    }
+                });
+        // [END send_email_verification]
+    }
 }
