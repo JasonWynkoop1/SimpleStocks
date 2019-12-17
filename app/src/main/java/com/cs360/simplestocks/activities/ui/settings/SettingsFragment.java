@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cs360.simplestocks.activities.LoginActivities.LoginActivity;
+import com.cs360.simplestocks.activities.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.simplestocks.loginregister.R;
 

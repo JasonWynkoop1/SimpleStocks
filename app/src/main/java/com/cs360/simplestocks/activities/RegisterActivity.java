@@ -1,6 +1,7 @@
 package com.cs360.simplestocks.activities;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -63,7 +64,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()) {
 
             case R.id.APP_COMPAT_BUTTON_REGISTER:
-                writeDataToDatabase();
+                verifyUserInput();
                 createAccount(textInputEditTextEmail.getText().toString().trim(), textInputEditTextPassword.getText().toString().trim());
                 break;
 
@@ -120,7 +121,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
      */
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
-
         showProgressDialog();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
@@ -128,8 +128,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        updateUser.sendEmailVerification(user);
+
+                        updateUser.updateDisplayName(user, textInputEditTextName.getText().toString());
+                        sendEmailVerification();
                         updateUser.updateProfile(user);
+
+                        Intent intentLogin = new Intent(activity, LoginActivity.class);
+                        startActivity(intentLogin);
+
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -146,7 +152,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     /**
      * This method is to validate the input text fields and post data to SQLite
      */
-    private void writeDataToDatabase() {
+    private void verifyUserInput() {
         if (!inputValidation.checkForUserInput(textInputEditTextName, mTextInputLayout, getString(R.string.error_message_name))) {
             return;
         }
@@ -164,6 +170,33 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             return;
         }
 
+    }
+
+
+    /**
+     * Sending an email verification.  If the user doesn't verify
+     * their email then they cannot login
+     */
+    private void sendEmailVerification() {
+        // Send verification email
+        // [START send_email_verification]
+        final FirebaseUser user = mAuth.getCurrentUser();
+        user.sendEmailVerification()
+                .addOnCompleteListener(this, task -> {
+                    // [START_EXCLUDE]
+                    if (task.isSuccessful()) {
+                        Toast.makeText(activity,
+                                "Verification email sent to " + user.getEmail(),
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        Log.e(TAG, "sendEmailVerification", task.getException());
+                        Toast.makeText(RegisterActivity.this,
+                                "Failed to send verification email.",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    // [END_EXCLUDE]
+                });
+        // [END send_email_verification]
     }
 
     /**
