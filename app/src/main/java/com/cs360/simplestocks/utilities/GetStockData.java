@@ -34,12 +34,18 @@ public class GetStockData extends AsyncTask<URL, Integer, Long> {
             System.out.println("Stock: " + metaData.get("2. Symbol"));
 
             List<StockData> stockData = response.getStockData();
-            System.out.println(stockData.get(1).getOpen());
+            stockData.forEach(stock -> {
+                System.out.println("date:   " + stock.getDateTime());
+                System.out.println("open:   " + stock.getOpen());
+                System.out.println("high:   " + stock.getHigh());
+                System.out.println("low:    " + stock.getLow());
+                System.out.println("close:  " + stock.getClose());
+                System.out.println("volume: " + stock.getVolume());
+            });
         } catch (AlphaVantageException e) {
-            System.out.println("Failed connecting to the Alpha Vantage api...");
+            System.out.println("something went wrong");
         }
         return totalSize;
-
     }
 
     // This is called each time you call publishProgress()

@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cs360.simplestocks.activities.LoginActivities.LoginActivity"
+            android:name="com.cs360.simplestocks.activities.LoginActivity"
             android:screenOrientation="portrait"
             tools:ignore="InnerclassSeparator" />
         <activity

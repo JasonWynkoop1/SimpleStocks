@@ -9,7 +9,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
-    tools:context="com.cs360.simplestocks.activities.LoginActivities.LoginActivity">
+    tools:context="com.cs360.simplestocks.activities.LoginActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -31,7 +31,8 @@
         <TextView
             android:id="@+id/mStatusTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="#F44336" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/TEXT_INPUT_LAYOUT_EMAIL"

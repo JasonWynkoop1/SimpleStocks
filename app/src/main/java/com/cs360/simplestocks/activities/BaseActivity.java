@@ -9,6 +9,10 @@ import com.simplestocks.loginregister.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Interface for the activity classes. Implements a few
+ * methods that are used throughout each of the activities
+ */
 public class BaseActivity extends AppCompatActivity {
 
     public ProgressDialog mProgressDialog;
@@ -23,12 +27,20 @@ public class BaseActivity extends AppCompatActivity {
         mProgressDialog.show();
     }
 
+    /**
+     * Hide dialog box
+     */
     public void hideProgressDialog() {
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
             mProgressDialog.dismiss();
         }
     }
 
+    /**
+     * hide keyboard from view
+     *
+     * @param view
+     */
     public void hideKeyboard(View view) {
         final InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputMethodManager != null) {
@@ -36,6 +48,9 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * On keyboard stop
+     */
     public void onStop() {
         super.onStop();
         hideProgressDialog();

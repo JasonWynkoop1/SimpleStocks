@@ -10,15 +10,34 @@ title __APP's Class Diagram__\n
   
 
   namespace com.cs360.simplestocks.activities {
-    class com.cs360.simplestocks.activities.LoginActivities.LoginActivity {
+    class com.cs360.simplestocks.activities.LoginActivity {
     }
   }
   
 
   namespace com.cs360.simplestocks.activities {
-    class com.cs360.simplestocks.activities.MainActivity {
+    class com.cs360.simplestocks.activities.ui{
     }
   }
+
+    namespace com.cs360.simplestocks.activities {
+           class com.cs360.simplestocks.activities.ui.account{
+           }
+         }
+
+             namespace com.cs360.simplestocks.activities {
+               class com.cs360.simplestocks.activities.ui.home{
+               }
+             }
+                          namespace com.cs360.simplestocks.activities {
+                            class com.cs360.simplestocks.activities.ui.search{
+                            }
+                          }
+
+                                       namespace com.cs360.simplestocks.activities {
+                                         class com.cs360.simplestocks.activities.ui.settings{
+                                         }
+                                       }
   
 
   namespace com.cs360.simplestocks.activities {
@@ -49,196 +68,16 @@ title __APP's Class Diagram__\n
     class com.cs360.simplestocks.model.User {
     }
   }
+
+  namespace com.cs360.simplestocks.utilities{
+   class com.cs360.simplestocks.utilities.GetStockData {
+   }
+   }
   
 
-  namespace com.cs360.simplestocks.sql {
-    class com.cs360.simplestocks.sql.UserDatabaseHelper {
-    }
-  }
   
 
-  namespace com.cs360.simplestocks.stock_api {
-    class com.cs360.simplestocks.stock_api.AlphaVantageConnector {
-    }
-  }
-  
 
-  namespace com.cs360.simplestocks.stock_api {
-    interface com.cs360.simplestocks.stock_api.ApiConnector {
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    class com.cs360.simplestocks.stock_api.DigitalCurrencies {
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    class com.cs360.simplestocks.stock_api.SectorPerformances {
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace inputForApi {
-      interface com.cs360.simplestocks.stock_api.inputForApi.ApiParameter {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace inputForApi {
-      class com.cs360.simplestocks.stock_api.inputForApi.ApiParameterBuilder {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace inputForApi {
-      enum Function {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace inputForApi {
-      class com.cs360.simplestocks.stock_api.inputForApi.Symbol {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace inputForApi {
-      namespace digitalCurrencies {
-        enum Market {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      class com.cs360.simplestocks.stock_api.outputForApi.AlphaVantageException {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      abstract class com.cs360.simplestocks.stock_api.outputForApi.JsonParser {
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Daily {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        abstract class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyParser {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyResponse {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.IntraDay {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Monthly {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Weekly {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        namespace data {
-          class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.data.DigitalCurrencyData {
-          }
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace outputForApi {
-      namespace digitalcurrencies {
-        namespace data {
-          class com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.data.SimpleDigitalCurrencyData {
-          }
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace sectorPerformances {
-      namespace Data {
-        class com.cs360.simplestocks.stock_api.sectorPerformances.Data.SectorData {
-        }
-      }
-    }
-  }
-  
-
-  namespace com.cs360.simplestocks.stock_api {
-    namespace sectorPerformances {
-      class com.cs360.simplestocks.stock_api.sectorPerformances.Sectors {
-      }
-    }
-  }
   
 
   namespace com.cs360.simplestocks.test {
@@ -249,10 +88,10 @@ title __APP's Class Diagram__\n
   }
   
 
-  com.cs360.simplestocks.activities.LoginActivities.LoginActivity .up.|> android.view.View.OnClickListener
-  com.cs360.simplestocks.activities.LoginActivities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.cs360.simplestocks.activities.LoginActivities.LoginActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
-  com.cs360.simplestocks.activities.LoginActivities.LoginActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
+  com.cs360.simplestocks.activities.LoginActivity .up.|> android.view.View.OnClickListener
+  com.cs360.simplestocks.activities.LoginActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
+  com.cs360.simplestocks.activities.LoginActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
   com.cs360.simplestocks.activities.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
   com.cs360.simplestocks.activities.RegisterActivity .up.|> android.view.View.OnClickListener
   com.cs360.simplestocks.activities.RegisterActivity -up-|> androidx.appcompat.app.AppCompatActivity
@@ -262,17 +101,7 @@ title __APP's Class Diagram__\n
   com.cs360.simplestocks.activities.UsersListActivity -up-|> androidx.appcompat.app.AppCompatActivity
   com.cs360.simplestocks.adapters.UsersRecyclerAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
   com.cs360.simplestocks.sql.UserDatabaseHelper -up-|> android.database.sqlite.SQLiteOpenHelper
-  com.cs360.simplestocks.stock_api.AlphaVantageConnector .up.|> com.cs360.simplestocks.stock_api.ApiConnector
-  com.cs360.simplestocks.stock_api.DigitalCurrencies o-- com.cs360.simplestocks.stock_api.ApiConnector : apiConnector
-  com.cs360.simplestocks.stock_api.SectorPerformances o-- com.cs360.simplestocks.stock_api.ApiConnector : apiConnector
-  com.cs360.simplestocks.stock_api.inputForApi.Function .up.|> com.cs360.simplestocks.stock_api.inputForApi.ApiParameter
-  com.cs360.simplestocks.stock_api.inputForApi.Symbol .up.|> com.cs360.simplestocks.stock_api.inputForApi.ApiParameter
-  com.cs360.simplestocks.stock_api.inputForApi.digitalCurrencies.Market .up.|> com.cs360.simplestocks.stock_api.inputForApi.ApiParameter
-  com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Daily -up-|> com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyResponse
-  com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyParser -up-|> com.cs360.simplestocks.stock_api.outputForApi.JsonParser
-  com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.IntraDay -up-|> com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyResponse
-  com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Monthly -up-|> com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyResponse
-  com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.Weekly -up-|> com.cs360.simplestocks.stock_api.outputForApi.digitalcurrencies.DigitalCurrencyResponse
+
 
 
 right footer

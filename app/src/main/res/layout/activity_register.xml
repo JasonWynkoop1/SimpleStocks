@@ -9,7 +9,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
-    tools:context="com.cs360.simplestocks.activities.LoginActivities.LoginActivity">
+    tools:context="com.cs360.simplestocks.activities.LoginActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

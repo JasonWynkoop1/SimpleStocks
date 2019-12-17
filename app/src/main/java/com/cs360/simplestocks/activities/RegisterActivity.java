@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.cs360.simplestocks.activities.LoginActivities.LoginActivity;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.cs360.simplestocks.helpers.UpdateUser;
 import com.google.android.material.textfield.TextInputEditText;

@@ -1,4 +1,4 @@
-package com.cs360.simplestocks.activities.LoginActivities;
+package com.cs360.simplestocks.activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,11 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cs360.simplestocks.activities.BaseActivity;
-import com.cs360.simplestocks.activities.ContactUsActivity;
-import com.cs360.simplestocks.activities.HomepageActivity;
-import com.cs360.simplestocks.activities.RegisterActivity;
-import com.cs360.simplestocks.activities.UsersListActivity;
 import com.cs360.simplestocks.helpers.InputValidation;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -51,6 +46,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private static final int STORAGE_PERMISSION_CODE = 101;
     private TextView mStatusTextView;
     private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     /**
      *
@@ -87,7 +83,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onStart() {
         super.onStart();
         //check if user is signed it (non null) and update UI accordingly
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             Log.i(TAG, "onStart: Current user ----->" + currentUser.getDisplayName());
             //mAuth.addAuthStateListener(authStateListener);
@@ -156,6 +152,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()){
             case R.id.appCompatButtonLogin:
                 verifyInput();
+                signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
+                //mStatusTextView.setText("");
                 break;
             case R.id.TEXT_VIEW_LINK_REGISTER:
                 Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
@@ -215,14 +213,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             return;
         }
 
-        signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
 
     }
 
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
 
-        showProgressDialog();
+        //showProgressDialog();
         // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
@@ -231,6 +228,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "signInWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
+                        assert user != null;
                         if (!user.isEmailVerified()) {
                             Toast.makeText(LoginActivity.this, "You are not verified yet!  Please check your email for the verification link.",
                                     Toast.LENGTH_LONG).show();
@@ -241,37 +239,23 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show();
-                        mStatusTextView.setText(R.string.auth_failed);
-
-                        //updateUI(null);
+                        // mStatusTextView.setText(R.string.auth_failed);
+                        emptyInputEditText();
                     }
 
                     hideProgressDialog();
-                    // [END_EXCLUDE]
                 });
-        // [END sign_in_with_email]
-    }
-
-    /**
-     * Method to load admin dashboard
-     */
-    public void goToAdminDashboard() {
-        checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-        Intent accountsIntent = new Intent(activity, UsersListActivity.class);
-        accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
-        emptyInputEditText();
-        startActivity(accountsIntent);
     }
 
 
     public void goToHomepageActivity() {
-        Intent accountsIntent = new Intent(activity, HomepageActivity.class);
-        accountsIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
+        Intent homeIntent = new Intent(activity, HomepageActivity.class);
+        homeIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
+        homeIntent.putExtra("uid", currentUser.getUid());
         emptyInputEditText();
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-        startActivity(accountsIntent);
+        startActivity(homeIntent);
+
     }
 
     /**

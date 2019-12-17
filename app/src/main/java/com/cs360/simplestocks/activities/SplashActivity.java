@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.cs360.simplestocks.activities.LoginActivities.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.simplestocks.loginregister.R;
