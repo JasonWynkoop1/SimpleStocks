@@ -19,6 +19,12 @@ public class SplashActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private int i = 0;
 
+    /**
+     * Simulates a loading bar to show user
+     * that things a happening in the background
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

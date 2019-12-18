@@ -12,6 +12,7 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private List<String> mData;
     private LayoutInflater mInflater;

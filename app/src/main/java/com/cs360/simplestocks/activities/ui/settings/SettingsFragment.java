@@ -18,6 +18,9 @@ import androidx.lifecycle.ViewModelProviders;
 import static com.simplestocks.loginregister.R.id.sign_out_button;
 
 
+/**
+ * Holds the view for the settings fragment
+ */
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater,

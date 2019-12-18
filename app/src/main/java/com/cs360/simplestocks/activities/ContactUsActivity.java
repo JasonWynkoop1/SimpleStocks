@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.widget.NestedScrollView;
 
+/**
+ * ContactUs view logic.
+ */
 public class ContactUsActivity extends AppCompatActivity implements View.OnClickListener {
     private final AppCompatActivity activity = ContactUsActivity.this;
     private InputValidation inputValidation;
@@ -39,6 +42,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
     }
 
     //TODO:Figure out why this isn't working
+
     /**
      * initializing listeners
      */

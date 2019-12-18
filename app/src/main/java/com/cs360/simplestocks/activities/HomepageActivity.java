@@ -11,6 +11,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+/**
+ * Sets up the bottom nav bar view
+ */
 public class HomepageActivity extends AppCompatActivity {
 
 

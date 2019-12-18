@@ -2,6 +2,9 @@ package com.cs360.simplestocks.model;
 
 import java.util.ArrayList;
 
+/**
+ * User class to hold user data when created
+ */
 public class User {
 
     private int id;

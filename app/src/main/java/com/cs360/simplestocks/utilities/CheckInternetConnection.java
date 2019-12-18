@@ -4,7 +4,10 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class CheckInternetConnection {
+/**
+ * Class used for testing device internet connection
+ */
+class CheckInternetConnection {
 
     public static boolean chekcingNetworkConnection(Context context) {
 

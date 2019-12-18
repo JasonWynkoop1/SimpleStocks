@@ -14,6 +14,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 
+/**
+ * Holds the view for the search fragment
+ */
 public class SearchFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,

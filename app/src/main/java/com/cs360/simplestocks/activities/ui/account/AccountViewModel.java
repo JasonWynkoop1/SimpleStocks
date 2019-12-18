@@ -4,7 +4,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AccountViewModel extends ViewModel {
+/**
+ * Holds the logic of the account view
+ */
+class AccountViewModel extends ViewModel {
 
     private MutableLiveData<String> userName;
 

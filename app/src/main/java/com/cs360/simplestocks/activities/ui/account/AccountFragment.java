@@ -12,19 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-public class AccountFragment extends Fragment {
-
-    private View root;
-    private AccountViewModel accountViewModel;
-    private TextView nameTextView;
-    private TextView emailTextView;
-    private TextView passwordTextView;
+/**
+ * Holds the vew for the account fragment
+ */
+class AccountFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        accountViewModel = ViewModelProviders.of(this).get(AccountViewModel.class);
-        root = inflater.inflate(R.layout.fragment_account, container, false);
-        nameTextView = root.findViewById(R.id.user_name_text_view);
+        AccountViewModel accountViewModel = ViewModelProviders.of(this).get(AccountViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_account, container, false);
+        TextView nameTextView = root.findViewById(R.id.user_name_text_view);
         accountViewModel.getText().observe(this, nameTextView::setText);
         return root;
     }

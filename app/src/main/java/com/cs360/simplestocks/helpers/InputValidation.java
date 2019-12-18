@@ -9,6 +9,9 @@ import android.view.inputmethod.InputMethodManager;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+/**
+ * Class to check input from text fields
+ */
 public class InputValidation {
 
     private Context context;
@@ -33,7 +36,7 @@ public class InputValidation {
         String value = textInputEditText.getText().toString().trim();
         if (value.isEmpty()){
             textInputLayout.setError(message);
-           //closeKeyboard(textInputEditText);
+            //closeKeyboard(textInputEditText);
             return false;
         }else{
             textInputLayout.setErrorEnabled(false);

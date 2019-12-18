@@ -13,6 +13,9 @@ import java.util.List;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+/**
+ * Simple class to test if permissions have been checked
+ */
 public class PermissionChecker {
 
     public static final int REQUEST_PERMISSION_MULTIPLE = 0;

@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cs360.simplestocks.helpers.InputValidation;
@@ -25,31 +24,33 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+/**
+ * Login class that takes care of the login process
+ */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private final AppCompatActivity activity = LoginActivity.this;
 
-    private TextInputLayout mTextInputLayoutEmail;
-    private TextInputLayout textInputLayoutPassword;
+    private TextInputLayout emailTextLayout;
+    private TextInputLayout passwordTextLayout;
 
-    private TextInputEditText mTextInputEditTextEmail;
-    private TextInputEditText mTextInputEditPassword;
+    private TextInputEditText emailTextInputField;
+    private TextInputEditText passwordTextInputField;
     private static final String TAG = "Login";
 
-    private AppCompatButton appCompatButtonLogin;
+    private AppCompatButton loginButtonClickListener;
 
-    private AppCompatTextView textViewLinkRegister;
-    private AppCompatTextView textViewLinkContactUs;
+    private AppCompatTextView registerButtonClickListener;
+    private AppCompatTextView contactUsClickListener;
 
     private InputValidation inputValidation;
 
     private static final int STORAGE_PERMISSION_CODE = 101;
-    private TextView mStatusTextView;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
     /**
-     *
+     *things that happen when the view is created
      * @param savedInstanceState
      */
     @Override
@@ -123,8 +124,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode,
-                        permissions,
-                        grantResults);
+                permissions,
+                grantResults);
 
         if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.length > 0
@@ -133,8 +134,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         "Storage Permission Granted",
                         Toast.LENGTH_SHORT)
                         .show();
-            }
-            else {
+            } else {
                 Toast.makeText(LoginActivity.this,
                         "Storage Permission Denied",
                         Toast.LENGTH_SHORT)
@@ -152,7 +152,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()){
             case R.id.appCompatButtonLogin:
                 verifyInput();
-                signIn(mTextInputEditTextEmail.getText().toString().trim(), mTextInputEditPassword.getText().toString().trim());
+                signIn(emailTextInputField.getText().toString().trim(), passwordTextInputField.getText().toString().trim());
                 //mStatusTextView.setText("");
                 break;
             case R.id.TEXT_VIEW_LINK_REGISTER:
@@ -170,23 +170,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      * initializing view
      */
     private void initializeViews(){
-        mTextInputLayoutEmail = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
-        textInputLayoutPassword = findViewById(R.id.textInputLayoutPassword);
-        mTextInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
-        mTextInputEditPassword = findViewById(R.id.textInputEditTextPassword);
-        appCompatButtonLogin = findViewById(R.id.appCompatButtonLogin);
-        textViewLinkRegister = findViewById(R.id.TEXT_VIEW_LINK_REGISTER);
-        textViewLinkContactUs = findViewById(R.id.TEXT_VIEW_LINK_CONTACT_US);
-        mStatusTextView = findViewById(R.id.mStatusTextView);
+        emailTextLayout = findViewById(R.id.TEXT_INPUT_LAYOUT_EMAIL);
+        passwordTextLayout = findViewById(R.id.textInputLayoutPassword);
+        emailTextInputField = findViewById(R.id.textInputEditTextEmail);
+        passwordTextInputField = findViewById(R.id.textInputEditTextPassword);
+        loginButtonClickListener = findViewById(R.id.appCompatButtonLogin);
+        registerButtonClickListener = findViewById(R.id.TEXT_VIEW_LINK_REGISTER);
+        contactUsClickListener = findViewById(R.id.TEXT_VIEW_LINK_CONTACT_US);
     }
 
     /**
      * initializing listeners
      */
     private void initializeListeners(){
-        appCompatButtonLogin.setOnClickListener(this);
-        textViewLinkRegister.setOnClickListener(this);
-        textViewLinkContactUs.setOnClickListener(this);
+        loginButtonClickListener.setOnClickListener(this);
+        registerButtonClickListener.setOnClickListener(this);
+        contactUsClickListener.setOnClickListener(this);
     }
 
     /**
@@ -200,22 +199,30 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     /**
-     *
+     *Calls the inputValidation class to check the text fields for input
      */
     private void verifyInput(){
-        if (!inputValidation.checkForUserInput(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForUserInput(emailTextInputField, emailTextLayout, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.checkForValidEmail(mTextInputEditTextEmail, mTextInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.checkForValidEmail(emailTextInputField, emailTextLayout, getString(R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.checkForUserInput(mTextInputEditPassword, textInputLayoutPassword, getString(R.string.error_message_password))) {
+        if (!inputValidation.checkForUserInput(passwordTextInputField, passwordTextLayout, getString(R.string.error_message_password))) {
             return;
         }
 
 
     }
 
+
+    /**
+     * Starts a sign-in process through Firebase using the email and password
+     * entered into the text views
+     *
+     * @param email
+     * @param password
+     */
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
 
@@ -248,9 +255,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
 
+    /**
+     * Creates a homepage intent and loads it after
+     * checking permissions
+     */
     public void goToHomepageActivity() {
         Intent homeIntent = new Intent(activity, HomepageActivity.class);
-        homeIntent.putExtra("EMAIL", Objects.requireNonNull(mTextInputEditTextEmail.getText()).toString().trim());
+        homeIntent.putExtra("EMAIL", Objects.requireNonNull(emailTextInputField.getText()).toString().trim());
         homeIntent.putExtra("uid", currentUser.getUid());
         emptyInputEditText();
         checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
@@ -263,8 +274,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      *
      * email and password fields
      */
-    private void emptyInputEditText(){
-        mTextInputEditTextEmail.setText(null);
-        mTextInputEditPassword.setText(null);
+    private void emptyInputEditText() {
+        emailTextInputField.setText(null);
+        passwordTextInputField.setText(null);
     }
 }

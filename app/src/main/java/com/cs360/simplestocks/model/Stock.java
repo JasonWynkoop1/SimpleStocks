@@ -2,6 +2,10 @@ package com.cs360.simplestocks.model;
 
 import java.util.Date;
 
+/**
+ * Creates a stock object
+ */
+
 public class Stock {
     private String companyName;
     private String symbol;

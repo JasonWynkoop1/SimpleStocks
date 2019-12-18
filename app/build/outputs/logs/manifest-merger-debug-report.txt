@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:17:1-39:12
 MERGED from [com.github.PhilJay:MPAndroidChart-Realm:v3.0.3] /Users/Jason/.gradle/caches/transforms-2/files-2.1/291f33046dae825866fcbcc6976be7b1/MPAndroidChart-Realm-v3.0.3/AndroidManifest.xml:2:1-16:12
@@ -52,22 +52,22 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/Jason/.gradle/caches/t
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/ede779bc2682400490f54d1fd5fcec7d/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/6352da2278f4887fa4506d4f94107bca/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/d5c3ac55f54e7be18a5143c57b0a7ada/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
 	package
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:4:5-45
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-58:12
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:2:11-69
@@ -88,7 +88,7 @@ ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidM
 	android:name
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:9:22-78
 application
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:11:5-56:19
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:11:5-53:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:19.2.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/7c78a11c6b4a4456334831db0797030d/firebase-auth-19.2.0/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] /Users/Jason/.gradle/caches/transforms-2/files-2.1/21f6fbdc7f200ea7b6b3cb32cc21a6a4/play-services-auth-17.0.0/AndroidManifest.xml:22:5-37:19
@@ -151,54 +151,48 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:26:27-74
-activity#com.cs360.simplestocks.activities.LoginActivities.LoginActivity
+activity#com.cs360.simplestocks.activities.LoginActivity
 ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:29:9-32:50
 	android:screenOrientation
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:31:13-49
 	tools:ignore
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:32:13-47
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:30:13-91
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:30:13-75
 activity#com.cs360.simplestocks.activities.RegisterActivity
 ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:33:9-35:52
 	android:screenOrientation
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:35:13-49
 	android:name
 		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:34:13-78
-activity#com.cs360.simplestocks.activities.UsersListActivity
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:36:9-38:52
-	android:screenOrientation
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:38:13-49
-	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:37:13-79
 activity#com.cs360.simplestocks.activities.ContactUsActivity
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:39:9-51:20
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:36:9-48:20
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:39:19-85
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:36:19-85
 intent-filter#action:name:android.intent.action.ContactUseActivity+action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:mimeType:message/rfc822
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:40:13-50:29
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:37:13-47:29
 action#android.intent.action.ContactUseActivity
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:41:17-83
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:38:17-83
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:41:25-80
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:38:25-80
 action#android.intent.action.SEND
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:45:17-69
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:45:25-66
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:47:17-76
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:44:17-76
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:47:27-73
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:44:27-73
 data
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:49:17-59
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:46:17-59
 	android:mimeType
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:49:23-56
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:46:23-56
 meta-data#preloaded_fonts
-ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:53:9-55:57
+ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:50:9-52:57
 	android:resource
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:55:13-54
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:52:13-54
 	android:name
-		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:54:13-43
+		ADDED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml:51:13-43
 uses-sdk
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Jason/AndroidStudioProjects/SimpleStocks/app/src/main/AndroidManifest.xml

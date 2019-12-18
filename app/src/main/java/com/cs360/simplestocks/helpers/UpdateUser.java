@@ -6,14 +6,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-
+/**
+ * Methods to update current user data from Firebase
+ */
 public class UpdateUser {
 
     private static final String TAG = "UpdateUser";
 
-    public void updateProfile(FirebaseUser user) {
+    public void updateProfile() {
         // [START update_profile]
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                 .setDisplayName("Jane Q. User")
@@ -55,10 +57,10 @@ public class UpdateUser {
         // [END update_password]
     }
 
-    public void sendEmailVerification(FirebaseUser user) {
+    public void sendEmailVerification() {
         // [START send_email_verification]
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
+        FirebaseUser user = auth.getCurrentUser();
 
         user.sendEmailVerification()
                 .addOnCompleteListener(task -> {

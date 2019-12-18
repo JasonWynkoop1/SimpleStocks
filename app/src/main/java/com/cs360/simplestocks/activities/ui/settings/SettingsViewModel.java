@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * Holds the logic for the settings view
+ */
 public class SettingsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;

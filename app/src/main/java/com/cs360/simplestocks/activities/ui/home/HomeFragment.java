@@ -28,9 +28,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-//Alpha Vantage api imports
 
-
+/**
+ * Holds the view for the home fragment
+ */
 public class HomeFragment extends Fragment implements RecyclerViewAdapter.ItemClickListener {
     private TextView textView;
 

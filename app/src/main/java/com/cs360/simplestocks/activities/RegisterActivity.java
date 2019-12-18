@@ -22,6 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 
+/**
+ * Register class to handle the registration process
+ */
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "Register";
@@ -131,7 +134,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                         updateUser.updateDisplayName(user, textInputEditTextName.getText().toString());
                         sendEmailVerification();
-                        updateUser.updateProfile(user);
+                        updateUser.updateProfile();
 
                         Intent intentLogin = new Intent(activity, LoginActivity.class);
                         startActivity(intentLogin);

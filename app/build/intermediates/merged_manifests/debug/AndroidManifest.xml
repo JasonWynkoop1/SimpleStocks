@@ -34,13 +34,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cs360.simplestocks.activities.LoginActivities.LoginActivity"
+            android:name="com.cs360.simplestocks.activities.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.cs360.simplestocks.activities.RegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.cs360.simplestocks.activities.UsersListActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.cs360.simplestocks.activities.ContactUsActivity" >
             <intent-filter>

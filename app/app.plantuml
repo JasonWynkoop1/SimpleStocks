@@ -81,7 +81,7 @@ title __APP's Class Diagram__\n
   
 
   namespace com.cs360.simplestocks.test {
-    namespace etworkConnect {
+    namespace networkConnect {
       class com.cs360.simplestocks.testNetworkConnect.Utility {
       }
     }
@@ -98,9 +98,6 @@ title __APP's Class Diagram__\n
   com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.sql.UserDatabaseHelper : databaseHelper
   com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.helpers.InputValidation : inputValidation
   com.cs360.simplestocks.activities.RegisterActivity o-- com.cs360.simplestocks.model.User : user
-  com.cs360.simplestocks.activities.UsersListActivity -up-|> androidx.appcompat.app.AppCompatActivity
-  com.cs360.simplestocks.adapters.UsersRecyclerAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
-  com.cs360.simplestocks.sql.UserDatabaseHelper -up-|> android.database.sqlite.SQLiteOpenHelper
 
 
 

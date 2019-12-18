@@ -17,7 +17,10 @@ import java.util.Map;
 
 import androidx.annotation.RequiresApi;
 
-public class GetStockData extends AsyncTask<URL, Integer, Long> {
+/**
+ * Returns Alpha Vantage api data
+ */
+class GetStockData extends AsyncTask<URL, Integer, Long> {
     // Do the long-running work in here
     @RequiresApi(api = Build.VERSION_CODES.N)
     protected Long doInBackground(URL... urls) {
